@@ -1,0 +1,12 @@
+
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: live
+  open-pull-requests-limit: 1
+  automerged_updates:
+    - match:
+        dependency_type: "all"
+        update_type: "all"
