@@ -32,6 +32,9 @@ jobs:
       - name: Copy compiled output to host container
         run: |
           docker cp dogger:/app/public ./public
+          cd ./public
+          ls -R
+          cd ../
 
       - name: Publish to S3
         run: |
