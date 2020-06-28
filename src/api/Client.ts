@@ -10,7 +10,7 @@ class DoggerConfigurationParameters implements ConfigurationParameters {
         if(typeof window === "undefined")
             return "";
         
-        return "//" + window.location.host;
+        return "//app." + window.location.host;
     }
 
     get fetchApi(): FetchAPI {
@@ -45,12 +45,11 @@ class CachedDoggerConfigurationParameters extends DoggerConfigurationParameters 
         if(typeof window === "undefined")
             return "";
         
-        return "//cached." + window.location.host;
+        return "//cached.app." + window.location.host;
     }
 }
 
 export const apiClient = new GeneralApi(new Configuration(new DoggerConfigurationParameters()));
-// export const cachedApiClient = apiClient;
 export const cachedApiClient = new GeneralApi(new Configuration(new CachedDoggerConfigurationParameters()));
 
 export function withAuthenticatedApiClient<T>(action: (signal: AbortSignal) => Promise<T>)
