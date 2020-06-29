@@ -45,7 +45,7 @@ class CachedDoggerConfigurationParameters extends DoggerConfigurationParameters 
         if(typeof window === "undefined")
             return "";
         
-        return "//cached.app." + window.location.host;
+        return "//cached-app." + window.location.host;
     }
 }
 
