@@ -110,5 +110,5 @@ curl \
             ]
         }
     }' \
-    https://dogger.io/api/pull-dog/provision
+    https://app.dogger.io/api/pull-dog/provision
 ```
