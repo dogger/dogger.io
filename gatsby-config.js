@@ -106,13 +106,13 @@ module.exports = {
           protocol: "https",
           hostname: "dogger.io",
           params: {
-            '*.svg': {
+            '**/*.svg': {
                 ContentType: 'image/svg+xml',
-                "Cache-Control": 'public, max-age=31536000, immutable'
+                CacheControl: 'public, max-age=31536000, immutable'
             },
-            '*.woff': {
+            '**/*.woff': {
                 ContentType: 'font/woff',
-                "Cache-Control": 'public, max-age=31536000, immutable'
+                CacheControl: 'public, max-age=31536000, immutable'
             }
         }
       },
