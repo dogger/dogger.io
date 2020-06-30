@@ -108,6 +108,12 @@ module.exports = {
         },
       },
     },
+    {
+      resolve: `gatsby-plugin-s3`,
+      options: {
+          bucketName: 'dogger.io'
+      },
+    },
     `gatsby-plugin-styled-components`
   ],
 }

@@ -57,6 +57,7 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "test": "react-scripts test --env=jsdom",
+    "deploy": "gatsby-plugin-s3 deploy --yes",
     "swagger": "rimraf ./src/api/openapi && docker run --rm -e JAVA_OPTS=\"-Dio.swagger.parser.util.RemoteUrl.trustAll=true -Dio.swagger.v3.parser.util.RemoteUrl.trustAll=true\" -v %cd%:/local openapitools/openapi-generator-cli:v4.2.3 generate -i https://host.docker.internal:14567/swagger/v1/swagger.json -g typescript-fetch -o src/api/openapi --additional-properties=\"useSingleRequestParameter=false\" -o /local/src/api/openapi"
   },
   "eslintConfig": {

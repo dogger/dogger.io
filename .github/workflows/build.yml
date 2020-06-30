@@ -38,7 +38,7 @@ jobs:
 
       - name: Publish to S3
         run: |
-          docker run -v configuration:/root/.aws amazon/aws-cli configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
-          docker run -v configuration:/root/.aws amazon/aws-cli configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
-          docker run -v configuration:/root/.aws amazon/aws-cli configure set default.region eu-west-1
-          docker run -v configuration:/root/.aws -v $(pwd)/public:/aws amazon/aws-cli s3 sync . s3://dogger.io --delete --acl public-read
+          docker run -v ~/.aws:/root/.aws amazon/aws-cli configure set aws_access_key_id ${{ secrets.AWS_ACCESS_KEY_ID }}
+          docker run -v ~/.aws:/root/.aws amazon/aws-cli configure set aws_secret_access_key ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+          docker run -v ~/.aws:/root/.aws amazon/aws-cli configure set default.region eu-west-1
+          npm run deploy
