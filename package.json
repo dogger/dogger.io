@@ -24,11 +24,11 @@
     "eslint-plugin-react-hooks": "^2.5.1",
     "gatsby": "^2.23.1",
     "gatsby-image": "^2.4.5",
-    "gatsby-plugin-google-fonts": "^1.0.1",
     "gatsby-plugin-manifest": "^2.4.9",
     "gatsby-plugin-material-ui": "^2.1.9",
     "gatsby-plugin-react-helmet": "^3.3.2",
     "gatsby-plugin-robots-txt": "^1.5.1",
+    "gatsby-plugin-s3": "^0.3.3",
     "gatsby-plugin-sharp": "^2.6.9",
     "gatsby-plugin-sitemap": "^2.4.4",
     "gatsby-remark-autolink-headers": "^2.3.5",
@@ -47,9 +47,9 @@
     "react-lazylog": "^4.5.2",
     "react-monaco-editor": "^0.36.0",
     "react-scripts": "^3.4.1",
+    "typeface-roboto": "0.0.75",
     "typescript": "^3.8.3",
     "webfontloader": "^1.6.28",
-    "gatsby-plugin-s3": "^0.3.3",
     "yaml": "1.9.2"
   },
   "scripts": {

@@ -4,6 +4,7 @@ import {
   CssBaseline, useMediaQuery, createMuiTheme, PaletteType
 } from "@material-ui/core";
 
+import 'typeface-roboto';
 import './TopLayout.css';
 
 import {NavigationBar} from '../../src/components/NavigationBar';
