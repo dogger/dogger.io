@@ -111,7 +111,9 @@ module.exports = {
     {
       resolve: `gatsby-plugin-s3`,
       options: {
-          bucketName: 'dogger.io'
+          bucketName: 'dogger.io',
+          protocol: "https",
+          hostname: "dogger.io",
       },
     },
     `gatsby-plugin-styled-components`
