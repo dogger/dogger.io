@@ -107,10 +107,12 @@ module.exports = {
           hostname: "dogger.io",
           params: {
             '*.svg': {
-                ContentType: 'image/svg+xml'
+                ContentType: 'image/svg+xml',
+                CacheControl: 'public, max-age=31536000, immutable'
             },
             '*.woff': {
-                ContentType: 'font/woff'
+                ContentType: 'font/woff',
+                CacheControl: 'public, max-age=31536000, immutable'
             }
         }
       },
