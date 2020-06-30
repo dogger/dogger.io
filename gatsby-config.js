@@ -105,6 +105,14 @@ module.exports = {
           bucketName: 'dogger.io',
           protocol: "https",
           hostname: "dogger.io",
+          params: {
+            '*.svg': {
+                ContentType: 'image/svg+xml'
+            },
+            '*.woff': {
+                ContentType: 'font/woff'
+            }
+        }
       },
     },
     {
