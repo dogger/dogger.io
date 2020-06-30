@@ -108,11 +108,11 @@ module.exports = {
           params: {
             '*.svg': {
                 ContentType: 'image/svg+xml',
-                CacheControl: 'public, max-age=31536000, immutable'
+                "Cache-Control": 'public, max-age=31536000, immutable'
             },
             '*.woff': {
                 ContentType: 'font/woff',
-                CacheControl: 'public, max-age=31536000, immutable'
+                "Cache-Control": 'public, max-age=31536000, immutable'
             }
         }
       },
