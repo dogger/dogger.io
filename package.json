@@ -49,6 +49,7 @@
     "react-scripts": "^3.4.1",
     "typescript": "^3.8.3",
     "webfontloader": "^1.6.28",
+    "gatsby-plugin-s3": "^0.3.3",
     "yaml": "1.9.2"
   },
   "scripts": {
@@ -88,7 +89,6 @@
     "@typescript-eslint/parser": "^2.34.0",
     "babel-plugin-styled-components": "^1.10.7",
     "gatsby-plugin-remove-trailing-slashes": "^2.3.5",
-    "gatsby-plugin-s3": "^0.3.3",
     "gatsby-plugin-styled-components": "^3.3.6",
     "monaco-editor-webpack-plugin": "^1.9.0",
     "rimraf": "^3.0.2",
