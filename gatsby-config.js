@@ -107,6 +107,17 @@ module.exports = {
           hostname: "dogger.io",
       },
     },
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Roboto`,
+            variants: [`300`, '400', '500', `700`]
+          },
+        ],
+      },
+    }
     `gatsby-plugin-styled-components`
   ],
 }
