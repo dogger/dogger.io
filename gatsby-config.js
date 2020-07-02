@@ -100,6 +100,18 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Roboto`,
+            variants: [`300`, '400', '500', `700`]
+          },
+        ],
+      },
+    },
+    `gatsby-plugin-styled-components`,
+    {
       resolve: `gatsby-plugin-s3`,
       options: {
           bucketName: 'dogger.io',
@@ -113,21 +125,13 @@ module.exports = {
             '**/*.woff': {
                 ContentType: 'font/woff',
                 CacheControl: 'public, max-age=31536000, immutable'
+            },
+            '**/*.woff2': {
+                ContentType: 'font/woff2',
+                CacheControl: 'public, max-age=31536000, immutable'
             }
         }
       },
     },
-    {
-      resolve: `gatsby-plugin-prefetch-google-fonts`,
-      options: {
-        fonts: [
-          {
-            family: `Roboto`,
-            variants: [`300`, '400', '500', `700`]
-          },
-        ],
-      },
-    },
-    `gatsby-plugin-styled-components`
   ],
 }
