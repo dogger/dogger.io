@@ -114,7 +114,7 @@ export const PullDogPricingPlan = (props: {
                 <PullDogPricingPlanAttribute
                     title="Environment lifespan"
                     value={isFreePlan ?
-                        "Minimum 15 minutes" :
+                        "Minimum 55 minutes" :
                         "Indefinite"} />
                 <PullDogPricingPlanAttribute
                     title="RAM"
