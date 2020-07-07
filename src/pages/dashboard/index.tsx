@@ -1,4 +1,4 @@
-import React, { PropsWithChildren } from 'react';
+import React, { PropsWithChildren, useEffect } from 'react';
 import { Container, Drawer, List, ListItem, ListItemText, makeStyles, createStyles, Theme, ListItemIcon, CircularProgress } from '@material-ui/core';
 import { AccountCircle, Code } from '@material-ui/icons';
 import {Helmet} from "react-helmet";
@@ -42,9 +42,25 @@ type MenuItem = {
 
 export const DashboardPage = (props: PropsWithChildren<any>) => {
     const classes = useStyles();
-    const {isAuthenticated, loading } = useAuth0();
+    const {isAuthenticated, loading, loginWithRedirect } = useAuth0();
     const pathName = usePath();
-    if(!isAuthenticated || loading)
+
+    useEffect(() => {
+        if(loading)
+            return;
+
+        if(isAuthenticated)
+            return;
+
+        if(typeof window === "undefined")
+            return;
+
+        loginWithRedirect({
+            redirect_uri: window.location.href
+        });
+    }, [isAuthenticated, loading, loginWithRedirect])
+
+    if(loading)
         return <CircularProgress />;
 
     const menuItems: MenuItem[] = [
