@@ -66,9 +66,7 @@ export const NavigationBar = (props: { onThemeToggle: () => void }) => {
           <CircularProgress color="inherit" /> :
           (!isAuthenticated ?
             <Button color="inherit" onClick={() => loginWithRedirect({
-              appState: {
-                targetUrl: '/dashboard'
-              }
+              redirect_uri: '/dashboard'
             })}>Log in</Button> :
             <>
               <Button color="inherit" onClick={handleMenuClick} style={{
