@@ -122,13 +122,10 @@ export const Auth0Provider = ({
           if(o.redirect_uri) {
             const currentUrl = new URL(window.location.href);
 
-            var redirectUrl = new URL(o.redirect_uri);
-            var pathname = redirectUrl.pathname;
-
-            o.redirect_uri = `${currentUrl.protocol}//${currentUrl.host}/callback`;
             o.appState = {
-              targetUrl: pathname
+              targetUrl: o.redirect_uri
             };
+            o.redirect_uri = `${currentUrl.protocol}//${currentUrl.host}/callback`;
           }
 
           return await auth0Client!.loginWithRedirect(o);

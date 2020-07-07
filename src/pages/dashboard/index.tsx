@@ -56,7 +56,7 @@ export const DashboardPage = (props: PropsWithChildren<any>) => {
             return;
 
         loginWithRedirect({
-            redirect_uri: window.location.href
+            redirect_uri: window.location.pathname
         });
     }, [isAuthenticated, loading, loginWithRedirect, user])
 
