@@ -119,6 +119,11 @@ export const Auth0Provider = ({
         getIdTokenClaims: (o: getIdTokenClaimsOptions | undefined) =>
           auth0Client!.getIdTokenClaims(o),
         loginWithRedirect: async (o: RedirectLoginOptions) => {
+          var url = new URL(o.redirect_uri);
+          var pathname = url.pathname;
+
+          o.redirect_uri = "https://dogger.io/callback?redirect=" + encodeURIComponent(pathname);
+
           return await auth0Client!.loginWithRedirect(o);
         },
         getTokenSilently: (o: GetTokenSilentlyOptions | undefined) =>
