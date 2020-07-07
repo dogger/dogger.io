@@ -99,6 +99,7 @@ export const Auth0Provider = ({
   };
 
   const handleRedirectCallback = async () => {
+    console.log('handle-callback');
     setLoading(true);
     const result = await auth0Client!.handleRedirectCallback();
     const user = await auth0Client!.getUser();
@@ -125,7 +126,7 @@ export const Auth0Provider = ({
             o.appState = {
               targetUrl: o.redirect_uri
             };
-            o.redirect_uri = `${currentUrl.protocol}//${currentUrl.host}/callback`;
+            o.redirect_uri = `${currentUrl.protocol}//${currentUrl.host}/callback/`;
           }
 
           return await auth0Client!.loginWithRedirect(o);
