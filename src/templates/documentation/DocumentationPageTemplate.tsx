@@ -33,6 +33,13 @@ const renderMenu = (references: DocumentationReference[]) => {
 
 const renderDocumentation = (post: DocumentationPage) => {
   return <div className={classes.documentationWrapper}>
+    <Helmet>
+        <title>Blog</title>
+        <meta 
+            name="description" 
+            content="The documentation shows how to use Pull Dog and Dogger." />
+        <link rel="canonical" href="https://dogger.io/documentation" />
+    </Helmet>
     <div className={classes.documentation} dangerouslySetInnerHTML={{ __html: post.contents }} />
     <div className={classes.rootMenu}>{renderMenu(post.references)}</div>
   </div>;
