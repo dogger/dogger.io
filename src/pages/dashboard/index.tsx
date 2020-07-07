@@ -42,14 +42,14 @@ type MenuItem = {
 
 export const DashboardPage = (props: PropsWithChildren<any>) => {
     const classes = useStyles();
-    const {isAuthenticated, loading, loginWithRedirect } = useAuth0();
+    const {isAuthenticated, loading, loginWithRedirect, user } = useAuth0();
     const pathName = usePath();
 
     useEffect(() => {
         if(loading)
             return;
 
-        if(isAuthenticated)
+        if(isAuthenticated || !user || !user.email)
             return;
 
         if(typeof window === "undefined")
@@ -58,7 +58,7 @@ export const DashboardPage = (props: PropsWithChildren<any>) => {
         loginWithRedirect({
             redirect_uri: window.location.href
         });
-    }, [isAuthenticated, loading, loginWithRedirect])
+    }, [isAuthenticated, loading, loginWithRedirect, user])
 
     if(loading)
         return <CircularProgress />;
