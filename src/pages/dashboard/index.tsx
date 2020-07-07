@@ -49,7 +49,7 @@ export const DashboardPage = (props: PropsWithChildren<any>) => {
         if(loading)
             return;
 
-        if(isAuthenticated || !user || !user.email)
+        if(isAuthenticated)
             return;
 
         if(typeof window === "undefined")
