@@ -1,6 +1,7 @@
 import { navigate } from "@reach/router";
 
 export const onRedirectCallback = async appState => {
+  console.log('on-redirect-callback', appState);
   navigate(
     appState && appState.targetUrl
       ? appState.targetUrl
