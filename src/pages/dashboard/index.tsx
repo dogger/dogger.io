@@ -66,7 +66,7 @@ export const DashboardPage = (props: PropsWithChildren<any>) => {
     const menuItems: MenuItem[] = [
         {
             title: "Account",
-            url: "/dashboard",
+            url: "/dashboard/",
             renderIcon: () => <AccountCircle />
         },
         // {
@@ -83,7 +83,7 @@ export const DashboardPage = (props: PropsWithChildren<any>) => {
         // },
         {
             title: "Pull Dog",
-            url: "/dashboard/pull-dog",
+            url: "/dashboard/pull-dog/",
             renderIcon: () => <Code />
         }
     ];
