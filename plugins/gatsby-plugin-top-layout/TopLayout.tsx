@@ -13,7 +13,7 @@ import { auth0Config, onRedirectCallback } from '../../src/setup/auth';
 
 import {Helmet} from "react-helmet";
 
-if ('serviceWorker' in navigator) {
+if (typeof navigator !== "undefined" && 'serviceWorker' in navigator) {
   navigator.serviceWorker.ready
     .then(registration => {
       registration.unregister();
