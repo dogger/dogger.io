@@ -114,9 +114,6 @@ export const PullDogPage = (props: RouteComponentProps) => {
                 <Typography variant="h4" style={{ marginTop: 16 }}>
                     Installed
                 </Typography>
-                <Typography variant="body1" style={{opacity: 0.4}}>
-                    Click on a repository to see how to set it up.
-                </Typography>
                 <Card style={{
                     marginTop: 12
                 }}>
@@ -135,11 +132,6 @@ export const PullDogPage = (props: RouteComponentProps) => {
                                 <ListItemText>
                                     {value.name}
                                 </ListItemText>
-                                {/* <ListItemSecondaryAction>
-                                    <IconButton edge="end">
-                                        <Remove />
-                                    </IconButton>
-                                </ListItemSecondaryAction> */}
                             </ListItem>)}
                     </List>
                 </Card>
