@@ -1,7 +1,7 @@
 import React, { ReactFragment } from 'react';
 import { graphql } from "gatsby";
 import { useTheme, Typography, Container, Box, Card, CardContent, Link, Divider, Grid, makeStyles, Theme, useMediaQuery } from '@material-ui/core';
-import { GitHub, Storage, ArrowDownward, AssignmentTurnedIn, MoneyOff, Share, ListAlt } from '@material-ui/icons';
+import { GitHub, Storage, ArrowDownward, AssignmentTurnedIn, MoneyOff, Share, ListAlt, Timer } from '@material-ui/icons';
 import { PullDogPricingTable } from '../components/pull-dog/PullDogPricingTable';
 import Img from "gatsby-image";
 import { Helmet } from 'react-helmet';
@@ -477,6 +477,13 @@ const App = ({data}) => {
                             title="Full transparency"
                             description={<>In addition to <a target="_blank" href="https://plausible.io/dogger.io" rel="noopener noreferrer">sharing our traffic</a>, our <a target="_blank" href="/blog/pull-dog-is-practically-non-profit">income</a> and <a rel="nofollow noopener noreferrer" target="_blank" href="https://github.com/dogger">code</a>, we also expose our <a rel="nofollow noopener noreferrer" target="_blank" href="https://github.com/orgs/dogger/projects/1">roadmap</a> publically.</>}
                             icon={<ListAlt className={styles.accentColor} style={{ fontSize: 80 }} />}
+                        />
+                    </Grid>
+                    <Grid item xs={12} sm={6} md={4}>
+                        <BenefitGridItem
+                            title="Fast setup"
+                            description={<>It only takes 19 seconds to set up. We counted! Just sign in with GitHub, and you're ready to go.</>}
+                            icon={<Timer className={styles.accentColor} style={{ fontSize: 80 }} />}
                         />
                     </Grid>
                 </Grid>
