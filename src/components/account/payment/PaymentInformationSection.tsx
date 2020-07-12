@@ -11,7 +11,6 @@ export const PaymentInformationSection = () => {
 
     function onUpdatePaymentMethodClicked(method: PaymentMethod) {
         setPaymentMethod(method.id);
-        alert("Payment method added!");
     }
 
     if(paymentMethod === void 0)
