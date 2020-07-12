@@ -32,7 +32,11 @@ module.exports = {
           },
           { 
             userAgent: '*', 
-            disallow: '/dashboard' 
+            disallow: '/dashboard'
+          },
+          { 
+            userAgent: '*', 
+            disallow: '/callback'
           }
         ]
       }
@@ -88,7 +92,13 @@ module.exports = {
         "background_color": "#ffffff"
       },
     },
-    `gatsby-plugin-sitemap`,
+    {
+      resolve: `gatsby-plugin-sitemap`,
+      options: {
+        output: `/sitemap.xml`,
+        exclude: [`/dashboard/*`, `/callback`]
+      }
+    },
     'gatsby-plugin-top-layout',
     {
       resolve: `gatsby-plugin-material-ui`,
