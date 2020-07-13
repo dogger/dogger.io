@@ -70,7 +70,7 @@ export const Testimonial = (props: {
                 <span style={{
                     opacity: 0.75
                 }}>
-                    {props.message}
+                    "{props.message}"
                 </span>
             </Typography>
             <Box style={{
