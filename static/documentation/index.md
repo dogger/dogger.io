@@ -11,10 +11,10 @@ Getting started with Pull Dog only takes a minute, and requires two steps.
 ### Installing the app
 The first thing to do is to <a rel="nofollow" href="https://github.com/apps/pull-dog/installations/new">install the GitHub app</a> to your user and/or organizations.
 
-### Enabling Pull Dog for a repository
-**Note:** This step is only needed if you want to customize Pull Dog, if your Docker Compose file is not located in the root of your repository, or if its filename differs from the default `docker-compose.yml`.
+### Customizing Pull Dog for a repository
+**Note:** *This step is only needed if you want to customize how Pull Dog works, if your Docker Compose file is not located in the root of your repository, or if its filename differs from the default `docker-compose.yml`.*
 
-To enable Pull Dog for a repository, you need to push a `pull-dog.json` configuration file to the repository's `master` branch.
+To customize how Pull Dog works for a repository, you need to push a `pull-dog.json` configuration file to the repository's `master` branch.
 
 The most minimal configuration possible contains just a pointer to the `docker-compose.yml` file in your repository that you want to provision a test environment from:
 
