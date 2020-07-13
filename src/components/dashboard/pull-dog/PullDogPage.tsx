@@ -82,7 +82,6 @@ export const PullDogPage = (props: RouteComponentProps) => {
 
     const repositories = repositoriesResponse?.repositories;
     const managedRepositories = repositories?.filter(x => !!x.pullDogId);
-    const availableRepositories = repositories?.filter(x => !x.pullDogId);
 
     return <>
         <PullDogRepositorySettingsDialog 
@@ -109,71 +108,26 @@ export const PullDogPage = (props: RouteComponentProps) => {
         </Typography>
         {areRepositoriesLoading ?
             <CircularProgress /> :
-            managedRepositories.length > 0 ?
-                <> 
-                <Typography variant="h4" style={{ marginTop: 16 }}>
-                    Installed
-                </Typography>
-                <Card style={{
-                    marginTop: 12
-                }}>
-                    <List>
-                        {managedRepositories.map(value =>
-                            <ListItem 
-                                key={value.handle} 
-                                button
-                                onClick={() => setSelectedRepository(value)}
-                            >
-                                <ListItemIcon style={{
-                                    minWidth: 40
-                                }}>
-                                    <GitHub/>
-                                </ListItemIcon>
-                                <ListItemText>
-                                    {value.name}
-                                </ListItemText>
-                            </ListItem>)}
-                    </List>
-                </Card>
-                </> :
-                <>
-                <Typography variant="body1" style={{opacity: 0.4}}>
-                    You have no installed repositories.<br/>Install a repository from the list of available repositories below.
-                </Typography>
-
-                <Typography variant="h4" style={{ marginTop: 16 }}>
-                    Available
-                </Typography>
-                <Typography variant="body1" style={{opacity: 0.4}}>
-                    Click on a repository to set it up for Pull Dog.
-                </Typography>
-                {availableRepositories.length > 0 && 
-                    <Card style={{
-                        marginTop: 12
-                    }}>
-                        <List>
-                            {availableRepositories.filter(x => !x.pullDogId).map(value =>
-                                <ListItem 
-                                    key={value.handle} 
-                                    button
-                                    onClick={() => setSelectedRepository(value)}
-                                >
-                                    <ListItemIcon style={{
-                                        minWidth: 40
-                                    }}>
-                                        <GitHub/>
-                                    </ListItemIcon>
-                                    <ListItemText>
-                                        {value.name}
-                                    </ListItemText>
-                                    <ListItemSecondaryAction>
-                                        <IconButton edge="end">
-                                            <Add />
-                                        </IconButton>
-                                    </ListItemSecondaryAction>
-                                </ListItem>)}
-                        </List>
-                    </Card>}
-                </>}
+            <Card style={{
+                marginTop: 12
+            }}>
+                <List>
+                    {managedRepositories.map(value =>
+                        <ListItem 
+                            key={value.handle} 
+                            button
+                            onClick={() => setSelectedRepository(value)}
+                        >
+                            <ListItemIcon style={{
+                                minWidth: 40
+                            }}>
+                                <GitHub/>
+                            </ListItemIcon>
+                            <ListItemText>
+                                {value.name}
+                            </ListItemText>
+                        </ListItem>)}
+                </List>
+            </Card>}
     </>
 }
