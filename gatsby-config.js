@@ -102,7 +102,7 @@ module.exports = {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,
-        exclude: [`/dashboard/*`, `/callback`]
+        exclude: [`/dashboard/**`, `/callback`]
       }
     },
     'gatsby-plugin-top-layout',
