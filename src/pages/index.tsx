@@ -76,7 +76,7 @@ const App = ({data}) => {
                             fontSize: '40px',
                             color: 'white'
                         }}>
-                            Docker all the things
+                            Dockerize all the things
                         </Typography>
                         <Typography variant="body1" component="p" style={{
                             opacity: 0.5,
