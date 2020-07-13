@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { PullDogPage } from '../../components/pull-dog/PullDogPage';
+import { PullDogPage } from '../../components/dashboard/pull-dog/PullDogPage';
 
 import { DashboardPage } from './index';
 

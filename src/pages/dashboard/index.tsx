@@ -4,7 +4,7 @@ import { AccountCircle, Code } from '@material-ui/icons';
 import {Helmet} from "react-helmet";
 import { useAuth0 } from '../../auth/Auth0Provider';
 import { navigate } from 'gatsby';
-import { AccountPage } from '../../components/account/AccountPage';
+import { AccountPage } from '../../components/dashboard/account/AccountPage';
 import { usePath } from '../../hooks/path';
 
 const useStyles = makeStyles((theme: Theme) =>

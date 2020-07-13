@@ -1,13 +1,15 @@
-import React, { ReactFragment } from 'react';
+import React, {  } from 'react';
 import { graphql } from "gatsby";
-import { useTheme, Typography, Container, Box, Card, CardContent, Link, Divider, Grid, makeStyles, Theme, useMediaQuery } from '@material-ui/core';
+import { useTheme, Typography, Container, Link, Divider, Grid, useMediaQuery, makeStyles, Theme } from '@material-ui/core';
 import { GitHub, Storage, ArrowDownward, AssignmentTurnedIn, MoneyOff, Share, ListAlt, Timer } from '@material-ui/icons';
-import { PullDogPricingTable } from '../components/pull-dog/PullDogPricingTable';
-import Img from "gatsby-image";
+import { PullDogPricingTable } from '../components/dashboard/pull-dog/PullDogPricingTable';
 import { Helmet } from 'react-helmet';
+import {ProductCard} from '../components/index/ProductCard';
+import {Timeline} from '../components/index/Timeline';
+import {Testimonial} from '../components/index/Testimonial';
+import {BenefitGridItem} from '../components/index/BenefitGridItem';
 
 const useStyles = makeStyles({
-    header: () => ({}),
     accentColor: (existingTheme: Theme) => ({
         color: existingTheme.palette.type === "dark" ?
             'white' :
@@ -22,220 +24,6 @@ const LandingPageSection = (props: { children, style?}) =>
     }}>
         {props.children}
     </section>;
-
-const BenefitGridItem = (props: { icon: JSX.Element, title: string, description: ReactFragment }) => {
-    return <>
-        <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            padding: 48
-        }}>
-            <div style={{
-                alignSelf: 'center'
-            }}>
-                {props.icon}
-            </div>
-            <Typography component="h4" style={{
-                fontSize: '24px',
-                textAlign: 'center',
-                padding: 16,
-                paddingTop: 24
-            }}>
-                {props.title}
-            </Typography>
-            <Typography variant="body1" component="p" style={{
-                opacity: 0.75,
-                fontSize: '18px',
-                textAlign: 'center'
-            }}>
-                {props.description}
-            </Typography>
-        </div>
-    </>;
-}
-
-export const Timeline = (props: { entries: Array<{ title: string, text: JSX.Element, image: any }> }) => {
-    const theme = useTheme();
-    const isDownFromMedium = useMediaQuery(theme.breakpoints.down('sm'));
-
-    const isDarkTheme = theme.palette.type === "dark";
-    const linkColor = isDarkTheme ?
-        "rgba(0,0,0,0.25)" :
-        "rgba(0,0,0,0.08)";
-
-    let isLeft = true;
-
-    return <div style={{
-        display: 'flex',
-        flexDirection: 'column'
-    }}>
-        {props
-            .entries
-            .map((entry, index) => {
-                const elements = new Array<JSX.Element>();
-
-                const elementsVerticalMargin = 48;
-                const elementsHorizontalMargin = 8;
-
-                const bulletSize = 20;
-
-                const linkWidth = 20;
-                const linkMargin = 10;
-                const linkBorderWidth = 2;
-
-                const elementWidth = `${isDownFromMedium ? 100 : 50}vw - ${linkWidth * 2}px - ${linkMargin * (isDownFromMedium ? 1 : 2)}px - ${elementsHorizontalMargin}px`;
-                const maxElementWidth = 450;
-
-                const calc = (inner: string) => `calc(${inner})`;
-
-                const linkElement = <div style={{
-                    height: 1,
-                    borderTop: `${linkBorderWidth}px dashed ${linkColor}`,
-                    width: linkWidth,
-                    alignSelf: 'flex-start',
-                    margin: linkMargin,
-                    marginTop: bulletSize / 2
-                }} />
-
-                const imageOffset = isDownFromMedium ? -30 : 50;
-                const imageElement =
-                    <Img alt="Timeline screenshot" fluid={entry.image} style={{
-                        width: calc(elementWidth),
-                        maxWidth: maxElementWidth,
-                        borderRadius: 10,
-                        marginTop: -imageOffset,
-                        marginLeft: 0,
-                        marginRight: 0,
-                        boxShadow: '0px 0px 28px 6px rgba(0,0,0,0.05)',
-                        borderWidth: 1,
-                        borderColor: 'rgba(0,0,0,0.05)',
-                        borderStyle: 'solid',
-                        objectFit: 'contain',
-                        alignSelf: 'flex-start'
-                    }} />;
-
-                const contentElement =
-                    <div style={{
-                        width: calc(elementWidth),
-                        maxWidth: maxElementWidth,
-                        textAlign: isLeft ? 'right' : 'left',
-                        marginTop: -12
-                    }}>
-                        <div style={{
-                            fontSize: 40
-                        }}>{entry.title}</div>
-                        <div style={{
-                            marginTop: 8,
-                            opacity: 0.75,
-                            fontSize: 16
-                        }}>{entry.text}</div>
-                        {isDownFromMedium && imageElement}
-                    </div>;
-
-                const bulletElement =
-                    <>
-                        <div style={{
-                            position: 'relative'
-                        }}>
-                            <Box boxShadow={2} style={{
-                                backgroundColor: theme.palette.primary.main,
-                                width: bulletSize,
-                                height: bulletSize,
-                                borderRadius: bulletSize * 2,
-                                alignSelf: 'flex-start'
-                            }} />
-                            {index !== props.entries.length - 1 && <div style={{
-                                borderRight: `2px solid ${linkColor}`,
-                                position: 'absolute',
-                                top: bulletSize + linkMargin,
-                                left: bulletSize / 2 - 1,
-                                bottom: -elementsVerticalMargin * 2 + linkMargin
-                            }} />}
-                        </div>
-                    </>;
-
-                elements.push(...(isLeft ?
-                    [contentElement, linkElement] :
-                    [!isDownFromMedium && imageElement, linkElement]).filter(x => !!x));
-
-                elements.push(bulletElement);
-
-                elements.push(...(!isLeft ?
-                    [linkElement, contentElement] :
-                    [!isDownFromMedium && linkElement, !isDownFromMedium && imageElement]).filter(x => !!x));
-
-                if (!isDownFromMedium)
-                    isLeft = !isLeft;
-
-                return <div key={`timeline-entry-${index}`} style={{
-                    display: 'flex',
-                    flexDirection: 'row',
-                    justifyContent: 'center',
-                    marginTop: elementsVerticalMargin,
-                    marginBottom: elementsVerticalMargin,
-                    marginLeft: elementsHorizontalMargin,
-                    marginRight: elementsHorizontalMargin
-                }}>
-                    {elements}
-                </div>;
-            })}
-    </div>;
-}
-
-const ProductCard = (props: {
-    description: string,
-    title: string,
-    icon: JSX.Element,
-    disabled?: boolean,
-    anchor: string
-}) => {
-    const theme = useTheme();
-    const styles = useStyles(theme);
-
-    return <Card style={{
-        maxWidth: 350,
-        width: '100%',
-        margin: 24,
-        opacity: props.disabled ? 0.5 : 1
-    }}>
-        <CardContent style={{
-            padding: 48,
-            display: 'flex',
-            flexDirection: 'column',
-            height: '100%'
-        }}>
-            <div style={{ textAlign: 'center' }}>
-                {props.icon}
-            </div>
-            <Typography component="h1" style={{
-                fontSize: '30px',
-                textAlign: 'center',
-                padding: 16,
-                paddingTop: 24
-            }}>
-                {props.title}
-            </Typography>
-            <Typography variant="body1" component="p" style={{
-                opacity: 0.75,
-                fontSize: '18px'
-            }}>
-                {props.description}
-            </Typography>
-            <div style={{ flexGrow: 1 }} />
-            <Link href={props.disabled ? null : "#" + props.anchor} className={styles.accentColor} style={{
-                fontSize: '20px',
-                fontWeight: 'bold',
-                paddingTop: 32,
-                display: 'flex',
-                alignSelf: 'center'
-            }}>
-                {props.disabled ?
-                    "Coming soon" :
-                    "Find out more"}
-            </Link>
-        </CardContent>
-    </Card>;
-}
 
 const App = ({data}) => {
     const theme = useTheme();
@@ -332,7 +120,7 @@ const App = ({data}) => {
                 display: 'flex',
                 flexDirection: 'column'
             }}>
-                <Typography id="products" component="h2" className={styles.header} style={{
+                <Typography id="products" component="h2" style={{
                     fontSize: '50px',
                     textAlign: 'center',
                     marginTop: -100,
@@ -388,7 +176,7 @@ const App = ({data}) => {
                     display: 'flex',
                     flexDirection: 'column'
                 }}>
-                    <Typography id="pull-dog" component="h3" className={styles.header} style={{
+                    <Typography id="pull-dog" component="h3" style={{
                         fontSize: '60px',
                         alignSelf: 'center',
                         marginTop: -100,
@@ -441,8 +229,38 @@ const App = ({data}) => {
             <Container style={{
                 maxWidth: '1140px',
                 marginTop: 128,
+                marginBottom: 164
+            }}>
+                <Typography id="loved-by" component="h4" style={{
+                    fontSize: '50px',
+                    textAlign: 'center',
+                    paddingBottom: 24
+                }}>
+                    Loved by
+                </Typography>
+                <Testimonial
+                    twitterHandle="Tony_Lapenna"
+                    name="Tony Lapenna"
+                    title="Head of development"
+                    company="Portainer"
+                    message="Pull Dog is a real time saver. Instead of pulling and testing each branch during review manually, Pull Dog already has everything ready for us directly in each pull request."
+                    logoUrl="https://raw.githubusercontent.com/portainer/portainer/develop/app/assets/images/logo_alt.png"
+                    websiteUrl="https://www.portainer.io"
+                    profilePictureUrl="/images/landing/testimonials/anthony.jpg"
+                    gitHubName="portainer/portainer" />
+            </Container>
+            <Container style={{
+                maxWidth: '1140px',
+                marginTop: 128,
                 marginBottom: 128
             }}>
+                <Typography id="benefits" component="h4" style={{
+                    fontSize: '50px',
+                    textAlign: 'center',
+                    paddingBottom: 24
+                }}>
+                    Benefits
+                </Typography>
                 <Grid container spacing={0}>
                     <Grid item xs={12} sm={6} md={4}>
                         <BenefitGridItem
@@ -482,7 +300,7 @@ const App = ({data}) => {
                     <Grid item xs={12} sm={6} md={4}>
                         <BenefitGridItem
                             title="Fast setup"
-                            description={<>It only takes 19 seconds to set up. We counted! Just sign in with GitHub, and you're ready to go.</>}
+                            description={<>It only takes 19 seconds to set up. Just install the GitHub app to your repository, and you're ready to go.</>}
                             icon={<Timer className={styles.accentColor} style={{ fontSize: 80 }} />}
                         />
                     </Grid>
@@ -495,6 +313,13 @@ const App = ({data}) => {
                 paddingLeft: 16,
                 paddingRight: 16
             }}>
+                <Typography id="features" component="h4" style={{
+                    fontSize: '50px',
+                    textAlign: 'center',
+                    paddingBottom: 24
+                }}>
+                    Pricing
+                </Typography>
                 <PullDogPricingTable />
                 <Typography style={{ fontStyle: 'italic', opacity: 0.5, fontSize: 14, padding: 24, paddingBottom: 8 }}>
                     * The test environment pool is what determines how many simultaneous test environments that can be open at a given point in time. If you want test environments for 5 open pull requests at the same time, you need an environment pool of at least 5.

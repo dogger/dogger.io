@@ -93,6 +93,12 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-plugin-crisp-chat',
+      options: {
+        websiteId: '3ff6e447-66f0-4635-8092-f84e838b6d2b'
+      },
+    },
+    {
       resolve: `gatsby-plugin-sitemap`,
       options: {
         output: `/sitemap.xml`,

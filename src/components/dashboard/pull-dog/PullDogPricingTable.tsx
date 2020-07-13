@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useTheme, Typography, Card, CardContent, Button, Grid, Slider, IconButton, makeStyles, Theme, CircularProgress } from '@material-ui/core';
 import { GitHub, Add, Remove, TrendingUp, TrendingDown } from '@material-ui/icons';
-import { getPlansByPrice, getCheapestPlan, getMostExpensivePlan, plansAccessor, demoPlanAccessor } from '../../hooks/plans';
-import { PlanResponse, PullDogPlanResponse } from '../../api/openapi';
-import { pullDogSettingsAccessor } from '../../hooks/pull-dog';
-import { usePaymentMethod } from '../../hooks/payment';
-import { apiClient } from '../../api/Client';
+import { getPlansByPrice, getCheapestPlan, getMostExpensivePlan, plansAccessor, demoPlanAccessor } from '../../../hooks/plans';
+import { PlanResponse, PullDogPlanResponse } from '../../../api/openapi';
+import { pullDogSettingsAccessor } from '../../../hooks/pull-dog';
+import { usePaymentMethod } from '../../../hooks/payment';
+import { apiClient } from '../../../api/Client';
 import { useGlobalResource } from '@fluffy-spoon/react-globalize';
 
 const useStyles = makeStyles({

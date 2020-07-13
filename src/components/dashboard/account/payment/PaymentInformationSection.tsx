@@ -2,9 +2,9 @@ import React from 'react';
 import { Typography, Card, CardContent, CircularProgress } from '@material-ui/core';
 import { Elements } from '@stripe/react-stripe-js';
 import { PaymentForm } from './PaymentForm';
-import { stripePromise } from '../../../setup/stripe';
+import { stripePromise } from '../../../../setup/stripe';
 import { PaymentMethod } from '@stripe/stripe-js';
-import { usePaymentMethod } from '../../../hooks/payment';
+import { usePaymentMethod } from '../../../../hooks/payment';
 
 export const PaymentInformationSection = () => {
     const [paymentMethod, setPaymentMethod] = usePaymentMethod();

@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { apiClient } from '../../api/Client';
-import { trackGoal } from '../../utils';
-import { RepositoryResponse, RepositoriesResponse } from '../../api/openapi';
+import { apiClient } from '../../../api/Client';
+import { trackGoal } from '../../../utils';
+import { RepositoryResponse, RepositoriesResponse } from '../../../api/openapi';
 import { ListItem, ListItemIcon, ListItemText, IconButton, ListItemSecondaryAction, List, Typography, Card, Dialog, DialogTitle, DialogContent, CircularProgress, Button, DialogActions } from '@material-ui/core';
 import { Add, GitHub } from '@material-ui/icons';
 import { PullDogPricingTable } from './PullDogPricingTable';
-import { pullDogSettingsAccessor } from '../../hooks/pull-dog';
+import { pullDogSettingsAccessor } from '../../../hooks/pull-dog';
 import { useGlobalResource } from '@fluffy-spoon/react-globalize';
 import { RouteComponentProps } from '@reach/router';
 
