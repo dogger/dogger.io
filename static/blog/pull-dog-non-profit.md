@@ -10,7 +10,7 @@ At Dogger, we believe in full transparency. In addition to being committed to a 
 ### Pull Dog runs on AWS Lightsail
 <a href="/blog/pull-dog-automatic-docker-test-environments-for-pull-requests" target="_blank">Pull Dog</a> runs on AWS Lightsail. This is also easy to see from the code. 
 
-Now, if you compare the <a target="_blank" rel="nofollow" href="https://aws.amazon.com/lightsail/pricing">AWS Lightsail prices</a> with the <a href="/#pull-dog">Pull Dog prices</a>, you'll come to the conclusion that our prices are only roughly $1 higher per month for all plans that provide more than one instance in the pool.
+Now, if you compare the <a target="_blank" rel="nofollow" href="https://aws.amazon.com/lightsail/pricing">AWS Lightsail prices</a> with the <a href="/#pull-dog">Pull Dog prices</a>, you'll come to the conclusion that our prices are only roughly $2 or $3 higher per month for all plans that provide more than one instance in the pool.
 
 #### So how do we earn money?
 Amazon only charges us by the hour. This means that if a server runs for 10 minutes, we get charged an hour of use. If the server runs for a month, we get charged for a month. However, the Pull Dog prices are fixed every month, and is based on the *potential maximum amount of open pull requests (servers) you have*.
