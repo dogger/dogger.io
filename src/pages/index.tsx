@@ -285,15 +285,15 @@ const App = ({data}) => {
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
                         <BenefitGridItem
-                            title="Fully open source"
-                            description={<>We love open source. Everything we make at Dogger is <a rel="nofollow noopener noreferrer" target="_blank" href="https://github.com/dogger">fully open source</a>.</>}
+                            title="Shared account"
+                            description={<>Your plan is bound to your GitHub account or Organization, and is shared across all your repositories.</>}
                             icon={<GitHub className={styles.accentColor} style={{ fontSize: 80 }} />}
                         />
                     </Grid>
                     <Grid item xs={12} sm={6} md={4}>
                         <BenefitGridItem
                             title="Full transparency"
-                            description={<>In addition to <a target="_blank" href="https://plausible.io/dogger.io" rel="noopener noreferrer">sharing our traffic</a>, our <a target="_blank" href="/blog/pull-dog-is-practically-non-profit">income</a> and <a rel="nofollow noopener noreferrer" target="_blank" href="https://github.com/dogger">code</a>, we also expose our <a rel="nofollow noopener noreferrer" target="_blank" href="https://github.com/orgs/dogger/projects/1">roadmap</a> publically.</>}
+                            description={<>In addition to <a target="_blank" href="https://plausible.io/dogger.io" rel="noopener noreferrer">sharing our traffic</a>, our <a target="_blank" href="/blog/pull-dog-is-practically-non-profit">income</a> and <a rel="nofollow noopener noreferrer" target="_blank" href="https://github.com/dogger">source code</a>, we also expose our <a rel="nofollow noopener noreferrer" target="_blank" href="https://github.com/orgs/dogger/projects/1">roadmap</a> publically.</>}
                             icon={<ListAlt className={styles.accentColor} style={{ fontSize: 80 }} />}
                         />
                     </Grid>
