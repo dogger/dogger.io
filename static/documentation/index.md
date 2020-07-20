@@ -72,6 +72,13 @@ Specifies how comments from Pull Dog should behave.
 - **Type:** `"singleComment"|"multipleComments"`
 - **Default:** `"singleComment"`
 
+#### `label` (optional)
+Specifies a GitHub label that should be set on the pull requests that have Pull Dog test environments ready for them. Make sure this label already exists in your repository.
+
+- **Example:** `"pull-dog-environment-ready"`
+- **Type:** `string`
+- **Default:** `null`
+
 ### JSON file configuration
 The simplest way of configuring Pull Dog is by pushing the configuration as a `pull-dog.json` file to your `master` branch.
 
@@ -81,6 +88,7 @@ The simplest way of configuring Pull Dog is by pushing the configuration as a `p
     "expiry": "2.03:02:10",
     "buildArguments": { "MY_KEY": "my value" },
     "conversationMode": "singleComment",
+    "label": "pull-dog-environment-ready",
     "dockerComposeYmlFilePaths": [ 
         "your/path/to/docker-compose.yml" 
     ]
@@ -107,6 +115,7 @@ curl \
             "expiry": "2.03:02:10",
             "buildArguments": { "MY_KEY": "my value" },
             "conversationMode": "singleComment",
+            "label": "pull-dog-environment-ready",
             "dockerComposeYmlFilePaths": [
                 "your/path/to/docker-compose.yml"
             ]
