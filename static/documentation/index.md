@@ -96,11 +96,16 @@ The simplest way of configuring Pull Dog is by pushing the configuration as a `p
 ```
 
 ### Lazy configuration
-Lazy configuration allows a build server to dynamically set a configuration for a specific pull request.
+Lazy configuration will not provision a test environment when the pull request is opened, but will instead wait for a build server to make an API call to Pull Dog which then starts provisioning.
 
+The reason this may be useful is to set dynamic variables that are only available from the build server (such as referencing a specific Docker image that was just built and published).
+
+#### Example
 The below example uses the pull request <a href="https://github.com/portainer/portainer/pull/3932" rel="nofollow">portainer/portainer #3932</a> as an example.
 
 `59239347` is the GitHub ID of the repository. This (and the API key to use) can be optained by clicking the repository from the <a href="/dashboard/pull-dog">Pull Dog dashboard</a> page.
+
+_Instead of specifying `pullRequestHandle`, you can also reference a branch name by specifying `branchReference`._
 
 ```bash
 curl \
