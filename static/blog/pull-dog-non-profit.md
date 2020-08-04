@@ -2,7 +2,7 @@
 slug: "/blog/pull-dog-is-practically-non-profit"
 date: "2020-06-27"
 title: "Pull Dog is practically non profit"
-summary: "We earn less than $1 per month for the paid plans, and there is a free plan available as well."
+summary: "We earn less than $3 per month for the paid plans, and there is a free plan available as well."
 ---
 
 At Dogger, we believe in full transparency. In addition to being committed to a <a target="_blank" rel="nofollow" href="https://github.com/dogger">fully open-source codebase<a>, we are also transparent about our pricing model, <a href="https://plausible.io/dogger.io">our traffic</a> and our internal costs.
