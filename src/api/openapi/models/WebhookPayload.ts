@@ -26,6 +26,10 @@ import {
     InstallationPayloadFromJSON,
     InstallationPayloadFromJSONTyped,
     InstallationPayloadToJSON,
+    InstallationRepositoryReferencePayload,
+    InstallationRepositoryReferencePayloadFromJSON,
+    InstallationRepositoryReferencePayloadFromJSONTyped,
+    InstallationRepositoryReferencePayloadToJSON,
     IssuePayload,
     IssuePayloadFromJSON,
     IssuePayloadFromJSONTyped,
@@ -106,6 +110,18 @@ export interface WebhookPayload {
     commits?: Array<CommitPayload> | null;
     /**
      * 
+     * @type {Array<InstallationRepositoryReferencePayload>}
+     * @memberof WebhookPayload
+     */
+    repositoriesAdded?: Array<InstallationRepositoryReferencePayload> | null;
+    /**
+     * 
+     * @type {Array<InstallationRepositoryReferencePayload>}
+     * @memberof WebhookPayload
+     */
+    repositoriesRemoved?: Array<InstallationRepositoryReferencePayload> | null;
+    /**
+     * 
      * @type {string}
      * @memberof WebhookPayload
      */
@@ -131,6 +147,8 @@ export function WebhookPayloadFromJSONTyped(json: any, ignoreDiscriminator: bool
         'comment': !exists(json, 'comment') ? undefined : CommentPayloadFromJSON(json['comment']),
         'installation': !exists(json, 'installation') ? undefined : InstallationPayloadFromJSON(json['installation']),
         'commits': !exists(json, 'commits') ? undefined : (json['commits'] === null ? null : (json['commits'] as Array<any>).map(CommitPayloadFromJSON)),
+        'repositoriesAdded': !exists(json, 'repositories_added') ? undefined : (json['repositories_added'] === null ? null : (json['repositories_added'] as Array<any>).map(InstallationRepositoryReferencePayloadFromJSON)),
+        'repositoriesRemoved': !exists(json, 'repositories_removed') ? undefined : (json['repositories_removed'] === null ? null : (json['repositories_removed'] as Array<any>).map(InstallationRepositoryReferencePayloadFromJSON)),
         'ref': !exists(json, 'ref') ? undefined : json['ref'],
     };
 }
@@ -153,6 +171,8 @@ export function WebhookPayloadToJSON(value?: WebhookPayload | null): any {
         'comment': CommentPayloadToJSON(value.comment),
         'installation': InstallationPayloadToJSON(value.installation),
         'commits': value.commits === undefined ? undefined : (value.commits === null ? null : (value.commits as Array<any>).map(CommitPayloadToJSON)),
+        'repositories_added': value.repositoriesAdded === undefined ? undefined : (value.repositoriesAdded === null ? null : (value.repositoriesAdded as Array<any>).map(InstallationRepositoryReferencePayloadToJSON)),
+        'repositories_removed': value.repositoriesRemoved === undefined ? undefined : (value.repositoriesRemoved === null ? null : (value.repositoriesRemoved as Array<any>).map(InstallationRepositoryReferencePayloadToJSON)),
         'ref': value.ref,
     };
 }

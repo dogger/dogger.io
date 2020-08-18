@@ -19,7 +19,7 @@ export const ProductCard = (props: {
     const theme = useTheme();
     const styles = useStyles(theme);
 
-    return <Card style={{
+    return <><Card style={{
         maxWidth: 350,
         width: '100%',
         margin: 24,
@@ -61,5 +61,5 @@ export const ProductCard = (props: {
                     "Find out more"}
             </Link>
         </CardContent>
-    </Card>;
+    </Card></>;
 }

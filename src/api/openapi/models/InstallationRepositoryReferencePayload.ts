@@ -16,46 +16,32 @@ import { exists, mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface UserPayload
+ * @interface InstallationRepositoryReferencePayload
  */
-export interface UserPayload {
-    /**
-     * 
-     * @type {string}
-     * @memberof UserPayload
-     */
-    login?: string | null;
+export interface InstallationRepositoryReferencePayload {
     /**
      * 
      * @type {number}
-     * @memberof UserPayload
+     * @memberof InstallationRepositoryReferencePayload
      */
     id?: number;
-    /**
-     * 
-     * @type {string}
-     * @memberof UserPayload
-     */
-    type?: string | null;
 }
 
-export function UserPayloadFromJSON(json: any): UserPayload {
-    return UserPayloadFromJSONTyped(json, false);
+export function InstallationRepositoryReferencePayloadFromJSON(json: any): InstallationRepositoryReferencePayload {
+    return InstallationRepositoryReferencePayloadFromJSONTyped(json, false);
 }
 
-export function UserPayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): UserPayload {
+export function InstallationRepositoryReferencePayloadFromJSONTyped(json: any, ignoreDiscriminator: boolean): InstallationRepositoryReferencePayload {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         
-        'login': !exists(json, 'login') ? undefined : json['login'],
         'id': !exists(json, 'id') ? undefined : json['id'],
-        'type': !exists(json, 'type') ? undefined : json['type'],
     };
 }
 
-export function UserPayloadToJSON(value?: UserPayload | null): any {
+export function InstallationRepositoryReferencePayloadToJSON(value?: InstallationRepositoryReferencePayload | null): any {
     if (value === undefined) {
         return undefined;
     }
@@ -64,9 +50,7 @@ export function UserPayloadToJSON(value?: UserPayload | null): any {
     }
     return {
         
-        'login': value.login,
         'id': value.id,
-        'type': value.type,
     };
 }
 

@@ -1,13 +1,13 @@
-import React, {  } from 'react';
+import React, { } from 'react';
 import { graphql } from "gatsby";
 import { useTheme, Typography, Container, Link, Divider, Grid, useMediaQuery, makeStyles, Theme } from '@material-ui/core';
 import { GitHub, Storage, ArrowDownward, AssignmentTurnedIn, MoneyOff, Share, ListAlt, Timer } from '@material-ui/icons';
 import { PullDogPricingTable } from '../components/dashboard/pull-dog/PullDogPricingTable';
 import { Helmet } from 'react-helmet';
-import {ProductCard} from '../components/index/ProductCard';
-import {Timeline} from '../components/index/Timeline';
-import {Testimonial} from '../components/index/Testimonial';
-import {BenefitGridItem} from '../components/index/BenefitGridItem';
+import { ProductCard } from '../components/index/ProductCard';
+import { Timeline } from '../components/index/Timeline';
+import { Testimonial } from '../components/index/Testimonial';
+import { BenefitGridItem } from '../components/index/BenefitGridItem';
 
 const useStyles = makeStyles({
     accentColor: (existingTheme: Theme) => ({
@@ -25,7 +25,7 @@ const LandingPageSection = (props: { children, style?}) =>
         {props.children}
     </section>;
 
-const App = ({data}) => {
+const App = ({ data }) => {
     const theme = useTheme();
     const styles = useStyles(theme);
     const isDownFromMedium = useMediaQuery(theme.breakpoints.down('sm'));
@@ -135,7 +135,7 @@ const App = ({data}) => {
                     paddingTop: 8,
                     paddingBottom: 48
                 }}>
-                    Designed to complement each other, but not mutually exclusive.
+                    Designed to complement each other.
                 </Typography>
                 <Grid container style={{ width: 'auto', justifyContent: 'center' }}>
                     <Grid item sm={12} md={6} style={{
@@ -166,6 +166,26 @@ const App = ({data}) => {
                             }} />} />
                     </Grid>
                 </Grid>
+                <a 
+                    href="https://www.producthunt.com/posts/dogger?utm_source=badge-featured&amp;utm_medium=badge&amp;utm_souce=badge-dogger" 
+                    target="_blank" 
+                    rel="noopener noreferrer nofollow"
+                    style={{
+                        display: 'flex',
+                        alignSelf: 'center',
+                        paddingTop: 40
+                    }}
+                >
+                    <img 
+                        src={`https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=196035&amp;theme=${theme.palette.type}`}
+                        alt="Pull Dog - Save precious developer time while building your product | Product Hunt Embed"
+                        style={{
+                            width: 250,
+                            height: 54
+                        }}
+                        width="250px" 
+                        height="54px" />
+                </a>
             </Container>
         </LandingPageSection>
         <Divider style={{ margin: 96 }} />
@@ -191,7 +211,7 @@ const App = ({data}) => {
                         textAlign: 'center',
                         display: 'block',
                         paddingTop: 8,
-                        paddingBottom: 100,
+                        paddingBottom: 50,
                         maxWidth: 530
                     }}>
                         The simplest way to explain Pull Dog is by showing the typical developer flow as a timeline with screenshots.
@@ -332,7 +352,7 @@ const App = ({data}) => {
     </>;
 }
 
-export default ({data}) => {
+export default ({ data }) => {
     return (
         <App data={data} />
     );

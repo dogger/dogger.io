@@ -18,6 +18,10 @@ import {
     HeadPayloadFromJSON,
     HeadPayloadFromJSONTyped,
     HeadPayloadToJSON,
+    UserPayload,
+    UserPayloadFromJSON,
+    UserPayloadFromJSONTyped,
+    UserPayloadToJSON,
 } from './';
 
 /**
@@ -56,6 +60,12 @@ export interface PullRequestPayload {
      * @memberof PullRequestPayload
      */
     draft?: boolean;
+    /**
+     * 
+     * @type {UserPayload}
+     * @memberof PullRequestPayload
+     */
+    user?: UserPayload;
 }
 
 export function PullRequestPayloadFromJSON(json: any): PullRequestPayload {
@@ -73,6 +83,7 @@ export function PullRequestPayloadFromJSONTyped(json: any, ignoreDiscriminator: 
         'state': !exists(json, 'state') ? undefined : json['state'],
         'head': !exists(json, 'head') ? undefined : HeadPayloadFromJSON(json['head']),
         'draft': !exists(json, 'draft') ? undefined : json['draft'],
+        'user': !exists(json, 'user') ? undefined : UserPayloadFromJSON(json['user']),
     };
 }
 
@@ -90,6 +101,7 @@ export function PullRequestPayloadToJSON(value?: PullRequestPayload | null): any
         'state': value.state,
         'head': HeadPayloadToJSON(value.head),
         'draft': value.draft,
+        'user': UserPayloadToJSON(value.user),
     };
 }
 

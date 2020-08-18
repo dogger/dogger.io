@@ -43,7 +43,7 @@ export interface ProvisionRequest {
      * @type {string}
      * @memberof ProvisionRequest
      */
-    commitReference?: string | null;
+    branchReference?: string | null;
     /**
      * 
      * @type {string}
@@ -70,7 +70,7 @@ export function ProvisionRequestFromJSONTyped(json: any, ignoreDiscriminator: bo
         
         'repositoryHandle': !exists(json, 'repositoryHandle') ? undefined : json['repositoryHandle'],
         'pullRequestHandle': !exists(json, 'pullRequestHandle') ? undefined : json['pullRequestHandle'],
-        'commitReference': !exists(json, 'commitReference') ? undefined : json['commitReference'],
+        'branchReference': !exists(json, 'branchReference') ? undefined : json['branchReference'],
         'apiKey': !exists(json, 'apiKey') ? undefined : json['apiKey'],
         '_configuration': !exists(json, 'configuration') ? undefined : ConfigurationFileOverrideFromJSON(json['configuration']),
     };
@@ -87,7 +87,7 @@ export function ProvisionRequestToJSON(value?: ProvisionRequest | null): any {
         
         'repositoryHandle': value.repositoryHandle,
         'pullRequestHandle': value.pullRequestHandle,
-        'commitReference': value.commitReference,
+        'branchReference': value.branchReference,
         'apiKey': value.apiKey,
         'configuration': ConfigurationFileOverrideToJSON(value._configuration),
     };

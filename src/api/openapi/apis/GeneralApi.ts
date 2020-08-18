@@ -15,6 +15,9 @@
 
 import * as runtime from '../runtime';
 import {
+    ApplyCouponResponse,
+    ApplyCouponResponseFromJSON,
+    ApplyCouponResponseToJSON,
     ChangePlanRequest,
     ChangePlanRequestFromJSON,
     ChangePlanRequestToJSON,
@@ -24,6 +27,9 @@ import {
     ConnectionDetailsResponse,
     ConnectionDetailsResponseFromJSON,
     ConnectionDetailsResponseToJSON,
+    CouponCodeResponse,
+    CouponCodeResponseFromJSON,
+    CouponCodeResponseToJSON,
     DeployToClusterRequest,
     DeployToClusterRequestFromJSON,
     DeployToClusterRequestToJSON,
@@ -89,6 +95,10 @@ export interface ApiClustersDeployPostRequest {
 
 export interface ApiJobsJobIdStatusGetRequest {
     jobId: string | null;
+}
+
+export interface ApiPaymentCouponCodePostRequest {
+    code: string | null;
 }
 
 export interface ApiPaymentMethodsPaymentMethodIdPutRequest {
@@ -404,6 +414,58 @@ export class GeneralApi extends runtime.BaseAPI {
      */
     async apiJobsJobIdStatusGet(jobId: string | null): Promise<JobStatusResponse> {
         const response = await this.apiJobsJobIdStatusGetRaw({ jobId: jobId });
+        return await response.value();
+    }
+
+    /**
+     */
+    async apiPaymentCouponCodePostRaw(requestParameters: ApiPaymentCouponCodePostRequest): Promise<runtime.ApiResponse<ApplyCouponResponse>> {
+        if (requestParameters.code === null || requestParameters.code === undefined) {
+            throw new runtime.RequiredError('code','Required parameter requestParameters.code was null or undefined when calling apiPaymentCouponCodePost.');
+        }
+
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/payment/coupon/{code}`.replace(`{${"code"}}`, encodeURIComponent(String(requestParameters.code))),
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => ApplyCouponResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async apiPaymentCouponCodePost(code: string | null): Promise<ApplyCouponResponse> {
+        const response = await this.apiPaymentCouponCodePostRaw({ code: code });
+        return await response.value();
+    }
+
+    /**
+     */
+    async apiPaymentCouponGetRaw(): Promise<runtime.ApiResponse<CouponCodeResponse>> {
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        const response = await this.request({
+            path: `/api/payment/coupon`,
+            method: 'GET',
+            headers: headerParameters,
+            query: queryParameters,
+        });
+
+        return new runtime.JSONApiResponse(response, (jsonValue) => CouponCodeResponseFromJSON(jsonValue));
+    }
+
+    /**
+     */
+    async apiPaymentCouponGet(): Promise<CouponCodeResponse> {
+        const response = await this.apiPaymentCouponGetRaw();
         return await response.value();
     }
 

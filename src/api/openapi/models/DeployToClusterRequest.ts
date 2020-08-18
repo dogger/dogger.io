@@ -31,7 +31,7 @@ export interface DeployToClusterRequest {
      * @type {Array<string>}
      * @memberof DeployToClusterRequest
      */
-    dockerComposeYmlContents?: Array<string> | null;
+    dockerComposeYmlFilePaths?: Array<string> | null;
     /**
      * 
      * @type {Array<FileRequest>}
@@ -50,7 +50,7 @@ export function DeployToClusterRequestFromJSONTyped(json: any, ignoreDiscriminat
     }
     return {
         
-        'dockerComposeYmlContents': !exists(json, 'dockerComposeYmlContents') ? undefined : json['dockerComposeYmlContents'],
+        'dockerComposeYmlFilePaths': !exists(json, 'dockerComposeYmlFilePaths') ? undefined : json['dockerComposeYmlFilePaths'],
         'files': !exists(json, 'files') ? undefined : (json['files'] === null ? null : (json['files'] as Array<any>).map(FileRequestFromJSON)),
     };
 }
@@ -64,7 +64,7 @@ export function DeployToClusterRequestToJSON(value?: DeployToClusterRequest | nu
     }
     return {
         
-        'dockerComposeYmlContents': value.dockerComposeYmlContents,
+        'dockerComposeYmlFilePaths': value.dockerComposeYmlFilePaths,
         'files': value.files === undefined ? undefined : (value.files === null ? null : (value.files as Array<any>).map(FileRequestToJSON)),
     };
 }
