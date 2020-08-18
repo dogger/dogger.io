@@ -5,6 +5,15 @@ import { useState, useEffect } from "react";
 import { useAuth0 } from "../auth/Auth0Provider";
 import { createGlobalResource, useGlobalResource } from '@fluffy-spoon/react-globalize';
 
+export const couponCodeAccessor = createGlobalResource(
+    withAuthenticatedApiClient(async () => {
+        const couponCodeResponse = await apiClient.apiPaymentCouponGetRaw();
+        if(couponCodeResponse.raw.status === HttpStatus.NO_CONTENT)
+            return null;
+
+        return await couponCodeResponse.value();
+    }))
+
 const paymentMethodAccessor = createGlobalResource(
     withAuthenticatedApiClient(async () => {
         const paymentMethodResponse = await apiClient.apiPaymentMethodsCurrentGetRaw();

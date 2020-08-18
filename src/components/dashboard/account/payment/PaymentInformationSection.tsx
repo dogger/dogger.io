@@ -13,31 +13,35 @@ export const PaymentInformationSection = () => {
         setPaymentMethod(method.id);
     }
 
-    if(paymentMethod === void 0)
+    if (paymentMethod === void 0)
         return <CircularProgress />;
 
     return <>
         <Typography variant="h3">
-            {paymentMethod ? 
-                "Payment method" : 
+            {paymentMethod ?
+                "Payment method" :
                 "Set payment method"}
         </Typography>
-        {paymentMethod ?
-            <Card style={{
-                padding: 24,
-                marginTop: 16,
-                display: 'flex'
-            }}>
-                <CardContent>
-                    <Typography variant="h6" style={{ textAlign: 'center' }}>
+        <Card style={{
+            display: 'flex',
+            marginTop: 16,
+            width: 500
+        }}>
+            <CardContent>
+                {paymentMethod ?
+                    <Typography variant="h6" style={{ 
+                        textAlign: 'center',
+                        padding: 24,
+                        marginTop: 16
+                    }}>
                         {paymentMethod.brand}
-                    </Typography>
-                </CardContent>
-            </Card> :
-            <Elements stripe={stripePromise}>
-                <PaymentForm 
-                    onSubmit={onUpdatePaymentMethodClicked} 
-                />
-            </Elements>}
+                    </Typography> :
+                    <Elements stripe={stripePromise}>
+                        <PaymentForm
+                            onSubmit={onUpdatePaymentMethodClicked}
+                        />
+                    </Elements>}
+            </CardContent>
+        </Card>
     </>;
 }

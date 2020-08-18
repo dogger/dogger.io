@@ -9,6 +9,9 @@ class DoggerConfigurationParameters implements ConfigurationParameters {
     get basePath() {
         if(typeof window === "undefined")
             return "";
+
+        if(window.location.hostname === "localhost")
+            return "http://localhost:14566";
         
         return "//app." + window.location.host;
     }
@@ -44,6 +47,9 @@ class CachedDoggerConfigurationParameters extends DoggerConfigurationParameters 
     get basePath() {
         if(typeof window === "undefined")
             return "";
+
+        if(window.location.hostname === "localhost")
+        return "http://localhost:14566";
         
         return "//cached-app." + window.location.host;
     }
