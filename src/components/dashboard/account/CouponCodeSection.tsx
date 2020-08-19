@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { Typography, TextField, Button, Box, Card, CardContent, Divider } from '@material-ui/core';
+import { Typography, TextField, Button, Box, Card, CardContent } from '@material-ui/core';
 import { useGlobalResource } from '@fluffy-spoon/react-globalize';
 import { couponCodeAccessor } from '../../../hooks/payment';
 import { apiClient } from '../../../api/Client';

@@ -15,6 +15,9 @@
 
 import * as runtime from '../runtime';
 import {
+    ApplyAppSumoRequest,
+    ApplyAppSumoRequestFromJSON,
+    ApplyAppSumoRequestToJSON,
     ApplyCouponResponse,
     ApplyCouponResponseFromJSON,
     ApplyCouponResponseToJSON,
@@ -91,6 +94,10 @@ export interface ApiClustersDemoDeployPostRequest {
 
 export interface ApiClustersDeployPostRequest {
     deployToClusterRequest?: DeployToClusterRequest;
+}
+
+export interface ApiDealsAppsumoApplyPostRequest {
+    applyAppSumoRequest?: ApplyAppSumoRequest;
 }
 
 export interface ApiJobsJobIdStatusGetRequest {
@@ -387,6 +394,32 @@ export class GeneralApi extends runtime.BaseAPI {
     async apiClustersGet(): Promise<Array<ClusterResponse>> {
         const response = await this.apiClustersGetRaw();
         return await response.value();
+    }
+
+    /**
+     */
+    async apiDealsAppsumoApplyPostRaw(requestParameters: ApiDealsAppsumoApplyPostRequest): Promise<runtime.ApiResponse<void>> {
+        const queryParameters: runtime.HTTPQuery = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const response = await this.request({
+            path: `/api/deals/appsumo/apply`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: ApplyAppSumoRequestToJSON(requestParameters.applyAppSumoRequest),
+        });
+
+        return new runtime.VoidApiResponse(response);
+    }
+
+    /**
+     */
+    async apiDealsAppsumoApplyPost(applyAppSumoRequest?: ApplyAppSumoRequest): Promise<void> {
+        await this.apiDealsAppsumoApplyPostRaw({ applyAppSumoRequest: applyAppSumoRequest });
     }
 
     /**

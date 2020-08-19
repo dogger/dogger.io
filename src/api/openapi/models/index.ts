@@ -1,3 +1,4 @@
+export * from './ApplyAppSumoRequest';
 export * from './ApplyCouponResponse';
 export * from './ChangePlanRequest';
 export * from './ClusterResponse';
