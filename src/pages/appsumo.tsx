@@ -9,7 +9,6 @@ import doggerLogo from '../../static/images/dogger-no-title.svg';
 import { Favorite } from '@material-ui/icons';
 
 import {apiClient} from '../api/Client';
-import { VoidApiResponse } from '../api/openapi';
 
 const useStyles = makeStyles(() => ({
     formField: {
@@ -22,7 +21,9 @@ export default () => {
     const theme = useTheme();
     const styles = useStyles();
 
-    const [code, setCode] = useState("");
+    const urlParameters = new URLSearchParams(window.location.search);
+
+    const [code, setCode] = useState(urlParameters.get('code') || "");
     const [email, setEmail] = useState("");
 
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
@@ -110,7 +111,7 @@ export default () => {
                             onChange={e => setEmail(e.target.value)}
                             placeholder="The e-mail of your GitHub account" />
                         <TextField 
-                            label="AppSumo code" 
+                            label="AppSumo Code" 
                             value={code}
                             onChange={e => setCode(e.target.value)}
                             className={styles.formField} />
