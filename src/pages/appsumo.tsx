@@ -23,7 +23,8 @@ export default () => {
 
     const urlParameters = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
 
-    const [code, setCode] = useState(urlParameters.get('code') || "");
+    const defaultCode = urlParameters.get('code');
+    const [code, setCode] = useState(defaultCode || "");
     const [email, setEmail] = useState("");
 
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
@@ -113,6 +114,7 @@ export default () => {
                         <TextField 
                             label="AppSumo Code" 
                             value={code}
+                            defaultValue={defaultCode}
                             onChange={e => setCode(e.target.value)}
                             className={styles.formField} />
 
