@@ -21,9 +21,9 @@ export default () => {
     const theme = useTheme();
     const styles = useStyles();
 
-    const urlParameters = typeof window !== "undefined" && new URLSearchParams(window.location.search);
+    const urlParameters = new URLSearchParams(typeof window !== "undefined" ? window.location.search : "");
 
-    const [code, setCode] = useState(urlParameters?.get('code') || "");
+    const [code, setCode] = useState(urlParameters.get('code') || "");
     const [email, setEmail] = useState("");
 
     const [isButtonDisabled, setIsButtonDisabled] = useState(false);
