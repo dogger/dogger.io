@@ -12,7 +12,7 @@ import {apiClient} from '../api/Client';
 
 const useStyles = makeStyles(() => ({
     formField: {
-        margin: 16,
+        margin: 8,
         marginTop: 0
     }
 }));
@@ -72,13 +72,14 @@ export default () => {
                 alignSelf: 'flex-start',
                 paddingTop: 100,
                 flexDirection: 'column',
-                width: 600
+                maxWidth: 600,
+                margin: 8
             }}>
                 <Box style={{
                     display: 'flex',
                     flexDirection: 'row',
-                    padding: 40,
-                    justifyContent: 'space-between'
+                    justifyContent: 'center',
+                    marginBottom: 40
                 }}>
                     <img 
                         src={theme.palette.type === "dark" ? 
@@ -86,24 +87,27 @@ export default () => {
                             darkAppSumoLogo} 
                         alt="AppSumo logo" 
                         style={{
-                            width: 300
+                            width: 180
                         }} />
                     <Favorite style={{
-                        fontSize: 60,
-                        margin: 30,
+                        fontSize: 50,
+                        marginTop: 15,
+                        marginLeft: 15,
+                        marginRight: 15,
                         color: '#e00000'
                     }} />
                     <img 
                         src={doggerLogo} 
                         alt="Pull Dog logo" 
                         style={{
-                            height: 100
+                            width: 70
                         }} />
                 </Box>
                 <Card>
                     <CardContent style={{
                         display: 'flex',
-                        flexDirection: 'column'
+                        flexDirection: 'column',
+                        width: 'min(calc(100vw - 50px), 500px)'
                     }}>
                         <TextField 
                             label="GitHub account email" 
