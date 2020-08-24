@@ -29,7 +29,7 @@ async function createBlogPosts({ actions, graphql, reporter }) {
   result.data.allMarkdownRemark.edges.forEach(({ node }) => {
     const slug = node.frontmatter.slug;
     if(!slug)
-      throw new Error('One of the markdown files does not have a slug.');
+      return;
 
     const type = slug.split("/")[1];
 
