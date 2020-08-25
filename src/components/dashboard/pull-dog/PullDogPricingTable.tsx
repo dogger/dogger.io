@@ -106,6 +106,10 @@ export const PullDogPricingPlan = (props: {
                         </>}
                 </Typography>
                 <PullDogPricingPlanAttribute
+                    title="Repository count"
+                    emphasize
+                    value="Unlimited" />
+                <PullDogPricingPlanAttribute
                     title="Test environment pool *"
                     emphasize
                     value={isFreePlan ?

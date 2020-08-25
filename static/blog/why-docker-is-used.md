@@ -25,7 +25,7 @@ Docker containers run on Linux, even if your host machine is Windows or Mac. Thi
 
 They also run the same on any host machine, no matter how polluted or different this host machine is.
 
-![The origin of Docker](https://miro.medium.com/max/844/1*2IWD6fLgoe0oMKvAD6CUqQ.jpeg)
+<img src="https://miro.medium.com/max/844/1*2IWD6fLgoe0oMKvAD6CUqQ.jpeg" alt="The origin of Docker" />
 
 Let’s say your colleague is running into issues while testing your application. It could be because his/her installed SQL Server is of a different version, or that he/she is running on a different OS version. Perhaps he/she didn’t even install SQL Server on their machine.
 

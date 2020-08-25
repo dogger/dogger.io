@@ -12,26 +12,18 @@ export type BlogPost = {
     title: string;
     contents: string;
     summary: string;
+    slug: string;
     time: Moment;
 }
-
-export const generateLinkFromTitle = (title: string) => `/blog/${generateSlugFromTitle(title)}`;
-
-const generateSlugFromTitle = (title: string) => title
-    .toLowerCase()
-    .replace(/ /gi, '-')
-    .replace(/:/gi, '')
-    .trim();
 
 export const renderBlogPost = (post: BlogPost) => {
     return <>
         <h2>
             <Link
                 component={RouterLink}
-                to={generateLinkFromTitle(post.title)} 
+                to={post.slug} 
                 style={{
-                    color: 'inherit',
-                    fontWeight: 100
+                    color: 'inherit'
                 }}
             >
                 {post.title}
@@ -43,7 +35,7 @@ export const renderBlogPost = (post: BlogPost) => {
         {!post.contents && 
             <Link
                 component={RouterLink}
-                to={generateLinkFromTitle(post.title)} 
+                to={post.slug} 
                 style={{
                     textTransform: 'uppercase',
                     fontWeight: 500
@@ -74,13 +66,15 @@ export default (props: any) => {
         .allMarkdownRemark
         .edges
         .map(x => x.node)
-        .filter(x => x.frontmatter.slug.indexOf("/blog/") === 0)
+        .filter(x => x.frontmatter.slug?.indexOf("/blog/") === 0)
         .map(x => ({
             contents: "",
+            slug: x.frontmatter.slug,
             summary: x.frontmatter.summary,
             time: moment(x.frontmatter.date),
             title: x.frontmatter.title
-        }) as BlogPost);
+        }) as BlogPost) as Array<BlogPost>;
+    posts.sort((a, b) => b.time.unix() - a.time.unix());
 
     return <BlogPage {...props}>
         {posts.map(renderBlogPost)}

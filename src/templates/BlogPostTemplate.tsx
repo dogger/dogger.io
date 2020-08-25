@@ -1,6 +1,6 @@
 import React from "react"
 import { graphql } from "gatsby"
-import {renderBlogPost, BlogPost, BlogPage, generateLinkFromTitle} from '../pages/blog';
+import {renderBlogPost, BlogPost, BlogPage} from '../pages/blog';
 import { Helmet } from "react-helmet";
 import moment from "moment";
 
@@ -14,7 +14,8 @@ export default function Template({
     contents: html,
     time: moment(frontmatter.date),
     title: frontmatter.title,
-    summary: frontmatter.summary
+    summary: frontmatter.summary,
+    slug: frontmatter.slug
   };
 
   return <BlogPage>
@@ -24,7 +25,7 @@ export default function Template({
         <meta 
             name="description" 
             content={post.summary} />
-        <link rel="canonical" href={`https://dogger.io${generateLinkFromTitle(post.title)}`} />
+        <link rel="canonical" href={`https://dogger.io${post.slug}`} />
     </Helmet>
     <article>
         {renderBlogPost(post)}

@@ -18,7 +18,7 @@ But that second step can be quite tedious and annoying, especially if the person
 This is where Pull Dog comes in to play.
 
 
-<img src="/images/dogger-no-title.svg" alt="Pull Dog logo" />
+<img src="/images/pull-dog/promo.png" alt="Pull Dog combines Docker and GitHub to give you on-demand test environments for your pull requests" />
 
 Pull Dog is a GitHub app that will automatically provision a Docker-based test server for your feature as you open a pull request. And best of all - *it's all free!*
 
@@ -38,7 +38,7 @@ Once installed, you simply push a commit to the master branch of the repository 
 After pushing, Pull Dog is enabled for the given repository and will run for any future pull requests that are opened.
 
 ### Trying it out
-For my example, I made an empty repository with the following pull-dog.json configuration file:
+For my example, I made an empty repository with the following `pull-dog.json` configuration file:
 
 ```json
 {
@@ -48,7 +48,7 @@ For my example, I made an empty repository with the following pull-dog.json conf
 }
 ```
 
-And the following docker-compose.yml file, containing a basic WordPress and MySQL setup.
+And the following `docker-compose.yml` file, containing a basic WordPress and MySQL setup.
 
 ```yaml
 version: '3.3'
@@ -85,13 +85,13 @@ volumes:
 #### Opening a pull request
 Upon opening my pull request, I am greeted with the following comment from pull-dog where I can see that it is provisioning a server for me.
 
-![Pull Dog is provisioning a server here after opening the pull request](../images/pull-dog/screenshot-1.jpg)
+<img src="/images/pull-dog/screenshot-1.jpg" alt="Pull Dog is provisioning a server here after opening the pull request" />
 
 After a brief while, the comment is updated with the connection details of my server. *Note that the port 8000 is the exposed port from the docker-compose.yml file.*
 
-![The server is ready](../images/pull-dog/screenshot-2.jpg)
+<img src="/images/pull-dog/screenshot-2.jpg" alt="The server is ready" />
 
 #### Closing the pull request
 After closing the pull request, the server is shut down again, and the comment is updated to reflect that.
 
-![Pull Request is closed and server is destroyed](../images/pull-dog/screenshot-3.jpg)
+<img src="/images/pull-dog/screenshot-3.jpg" alt="Pull Request is closed and server is destroyed" />
