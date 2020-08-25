@@ -35,8 +35,8 @@ Let's take a look at the different options out there.
 <img src="/images/pull-dog/promo.png" alt="Pull Dog combines Docker and GitHub to give you on-demand test environments for your pull requests" />
 
 - **More info:** [dogger.io](/#pull-dog)
-- **Open source:** [Yes](https://github.com/dogger)
-- **Demo:** [Portainer's open Pull Requests on GitHub](https://github.com/portainer/portainer/pulls?q=is%3Aopen+is%3Apr+label%3Atest-instance-available)
+- **Open source:** <a rel="nofollow" target="_blank" href="https://github.com/dogger">Yes</a>
+- **Demo:** <a rel="nofollow" target="_blank" href="https://github.com/portainer/portainer/pulls?q=is%3Aopen+is%3Apr">Portainer's open Pull Requests on GitHub</a>
 - **Prerequisites:** Your app must be able to run in Docker.
 
 ##### Pricing
@@ -45,16 +45,16 @@ Pull Dog has a **free-forever tier available** for smaller projects.
 If **4GB** of RAM is not enough or you'd like to have many concurrent test environments running, there's a priced plan available starting at **$14/month** for **unlimited repositories**.
 
 ##### The good
-- Alive and updated regularly, as seen on its [GitHub Insights](https://github.com/dogger/app.dogger.io/pulse/monthly) page.
+- Alive and updated regularly, as seen on its <a rel="nofollow" target="_blank" href="https://github.com/dogger/app.dogger.io/pulse/monthly">GitHub Insights</a> page.
 - Fully managed. No setup required except installing a GitHub app, which takes **37** seconds.
 - Docker-based. If your application runs in Docker, it runs with Pull Dog as well. You can point it to a custom `docker-compose.yml` file if you wish.
 - Integrates well with any build system (or no build system at all for that matter). Is your build server already building your Docker images? No problem.
-- Fully transparent. From [roadmap](https://github.com/orgs/dogger/projects/1) to [open source](https://github.com/dogger).
+- Fully transparent. From a <a rel="nofollow" target="_blank" href="https://github.com/orgs/dogger/projects/1">public roadmap</a> to an <a rel="nofollow" target="_blank" href="https://github.com/dogger">open-source codebase</a>.
 
 ##### The bad
-- Only currently supports applications specified using a Docker Compose YML file [#630](https://github.com/dogger/app.dogger.io/issues/630).
-- Does not currently support a custom bring-your-own-server kind of infrastructure, and currently hosts everything on AWS Lightsail [#543](https://github.com/dogger/app.dogger.io/issues/543).
-- More? [Leave feedback](https://github.com/dogger/dogger.io/issues/new).
+- Only currently supports applications specified using a Docker Compose YML file (<a rel="nofollow" target="_blank" href="https://github.com/dogger/app.dogger.io/issues/630">#630</a>).
+- Does not currently support a custom bring-your-own-server kind of infrastructure, and currently hosts everything on AWS Lightsail (<a rel="nofollow" target="_blank" href="https://github.com/dogger/app.dogger.io/issues/543">#543</a>).
+- More? <a rel="nofollow" target="_blank" href="https://github.com/dogger/app.dogger.io/issues/new">Leave feedback</a>.
 
 <!-- #### Pull Preview
 - **More info:** [pullpreview.com](https://pullpreview.com/)
@@ -81,14 +81,14 @@ TODO
 If you're working in a larger team, there may constantly be a lot of pull requests open, pending review. Everyone might be busy working on their own features, and perhaps you've tried requesting a review from someone, and them forgetting it. You don't want to personally remind them all the time since that might seem annoying, but you also really would like your pull request merged.
 
 #### GitHub Organization reminders
-- **More info:** [docs.github.com](https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/managing-scheduled-reminders-for-your-team)
+- **More info:** <a rel="nofollow" target="_blank" href="https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/managing-scheduled-reminders-for-your-team">docs.github.com</a>
 - **Open source:** No
 - **Prerequisites:** Requires a team or organization on GitHub
 
 GitHub acquired Pull Panda (which happened to build Pull Reminders) to bring this directly into GitHub itself. You can specify specific criteria that should be met for a notification to arrive (for instance, labels, specific text in the title of the pull request, pull request age, etc), and it doesn't tend to get spammy because it likes to summarize all reminders into one post, based on an interval.
 
 #### Eleminder
-- **More info:** [eleminder.com](https://www.eleminder.com/)
+- **More info:** <a rel="nofollow" target="_blank" href="https://www.eleminder.com/">eleminder.com</a>
 - **Open source:** No
 - **Prerequisites**: GitHub or GitLab, and Slack.
 
