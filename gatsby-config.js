@@ -2,7 +2,7 @@ module.exports = {
   siteMetadata: {
     description: "Dogger has services and products to aid you in your Docker-related workflow.",
     title: "Dogger",
-    url: `https://dogger.io`,
+    siteUrl: `https://dogger.io`,
     titleTemplate: "%s · Dockerize all the things",
     image: "/images/pull-dog/promo.png",
     twitterUsername: "@ffMathy"
