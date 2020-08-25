@@ -11,9 +11,6 @@ import { Auth0Provider } from '../../src/auth/Auth0Provider';
 
 import { auth0Config, onRedirectCallback } from '../../src/setup/auth';
 
-import {Helmet} from "react-helmet";
-import Seo from '../../src/components/Seo';
-
 if (typeof navigator !== "undefined" && 'serviceWorker' in navigator) {
   navigator.serviceWorker.ready
     .then(registration => {
@@ -27,8 +24,11 @@ if (typeof navigator !== "undefined" && 'serviceWorker' in navigator) {
 export default ({children}: PropsWithChildren<any>) => {
   const themeFromStorage = typeof localStorage !== "undefined" && localStorage.getItem("theme");
 
-  const prefersDarkModeFromMediaQuery = useMediaQuery('(prefers-color-scheme: dark)');
-  const prefersLightModeFromMediaQuery = useMediaQuery('(prefers-color-scheme: light)');
+  // const prefersDarkModeFromMediaQuery = useMediaQuery('(prefers-color-scheme: dark)');
+  // const prefersLightModeFromMediaQuery = useMediaQuery('(prefers-color-scheme: light)');
+  const prefersLightModeFromMediaQuery = true;
+  const prefersDarkModeFromMediaQuery = false;
+
   const [themeName, setThemeName] = useState(themeFromStorage);
 
   const isPreferredThemeReady =
