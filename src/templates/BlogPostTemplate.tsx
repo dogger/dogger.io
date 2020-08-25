@@ -3,6 +3,7 @@ import { graphql } from "gatsby"
 import {renderBlogPost, BlogPost, BlogPage} from '../pages/blog';
 import { Helmet } from "react-helmet";
 import moment from "moment";
+import Seo from "../components/Seo";
 
 export default function Template({
   data
@@ -20,13 +21,7 @@ export default function Template({
 
   return <BlogPage>
     <>
-    <Helmet>
-        <title>{post.title}</title>
-        <meta 
-            name="description" 
-            content={post.summary} />
-        <link rel="canonical" href={`https://dogger.io${post.slug}`} />
-    </Helmet>
+    <Seo title={post.title} description={post.summary} />
     <article>
         {renderBlogPost(post)}
     </article>

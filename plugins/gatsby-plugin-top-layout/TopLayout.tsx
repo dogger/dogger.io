@@ -12,6 +12,7 @@ import { Auth0Provider } from '../../src/auth/Auth0Provider';
 import { auth0Config, onRedirectCallback } from '../../src/setup/auth';
 
 import {Helmet} from "react-helmet";
+import Seo from '../../src/components/Seo';
 
 if (typeof navigator !== "undefined" && 'serviceWorker' in navigator) {
   navigator.serviceWorker.ready
@@ -74,10 +75,6 @@ export default ({children}: PropsWithChildren<any>) => {
         onRedirectCallback={onRedirectCallback}
       >
         <>
-        <Helmet>
-            <title>Docker technologies - Dogger</title>
-            <meta name="robots" content="all" />
-        </Helmet>
         <NavigationBar onThemeToggle={() => {
             const newThemeName = theme.palette.type === "dark" ? "light" : "dark";
             

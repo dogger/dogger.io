@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import classes from './DocumentationPageTemplate.module.css';
 import { Helmet } from 'react-helmet';
+import Seo from '../../components/Seo';
 
 type DocumentationReference = {
   title: string;
@@ -33,13 +34,7 @@ const renderMenu = (references: DocumentationReference[]) => {
 
 const renderDocumentation = (post: DocumentationPage) => {
   return <div className={classes.documentationWrapper}>
-    <Helmet>
-        <title>Blog</title>
-        <meta 
-            name="description" 
-            content="The documentation shows how to use Pull Dog and Dogger." />
-        <link rel="canonical" href="https://dogger.io/documentation" />
-    </Helmet>
+    <Seo title="Documentation" description="The documentation shows how to use Pull Dog and Dogger." />
     <div className={classes.documentation} dangerouslySetInnerHTML={{ __html: post.contents }} />
     <div className={classes.rootMenu}>{renderMenu(post.references)}</div>
   </div>;

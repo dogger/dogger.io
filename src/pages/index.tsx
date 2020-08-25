@@ -8,6 +8,7 @@ import { ProductCard } from '../components/index/ProductCard';
 import { Timeline } from '../components/index/Timeline';
 import { Testimonial } from '../components/index/Testimonial';
 import { BenefitGridItem } from '../components/index/BenefitGridItem';
+import Seo from '../components/Seo';
 
 const useStyles = makeStyles({
     accentColor: (existingTheme: Theme) => ({
@@ -31,9 +32,7 @@ const App = ({ data }) => {
     const isDownFromMedium = useMediaQuery(theme.breakpoints.down('sm'));
 
     return <>
-        <Helmet>
-            <meta name="description" content="Dogger has services and products to aid you in your Docker-related workflow." />
-        </Helmet>
+        <Seo />
         <LandingPageSection style={{
             paddingTop: '6rem',
             paddingBottom: '20rem',

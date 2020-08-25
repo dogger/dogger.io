@@ -4,6 +4,8 @@ import moment, { Moment } from 'moment';
 import {Helmet} from "react-helmet";
 import { RouteComponentProps } from "@reach/router";
 
+import Seo from '../components/Seo';
+
 import classes from './blog.module.css';
 
 import { Link } from '@material-ui/core';
@@ -49,13 +51,10 @@ export const renderBlogPost = (post: BlogPost) => {
 export const BlogPage = (props: PropsWithChildren<RouteComponentProps>) => {
     return <div className={classes.blog}>
         <h1>Blog</h1>
-        <Helmet>
-            <title>Blog</title>
-            <meta 
-                name="description" 
-                content="The Dogger blog contains all kinds of tips and tricks for Docker developers." />
-            <link rel="canonical" href="https://dogger.io/blog" />
-        </Helmet>
+        <Seo
+            title="Blog"
+            description="The Dogger blog contains all kinds of tips and tricks for Docker developers." 
+        />
         {props.children}
     </div>
 }
