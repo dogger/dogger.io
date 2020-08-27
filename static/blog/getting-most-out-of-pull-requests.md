@@ -5,10 +5,6 @@ title: "Getting the most out of your Pull Requests: The complete list for 2020"
 summary: "If you're a developer, there's a good chance you're familiar with Pull Requests. They are a great way to contribute code to a project, or manage the development of independent features for a team. However, there is so much more you can do with them. We've listed the top tips here."
 ---
 
-If you're a developer, there's a good chance you're familiar with Pull Requests. They are a great way to contribute code to a project, or manage the development of independent features for a team.
-
-However, there is so much more you can do with them. We've listed the top tips here.
-
 ### Use an on-demand temporary preview environment
 You might already be deploying your application through GitHub Actions or some other CI/CD pipeline. That's great! It's probably also running your tests and making sure your code compiles.
 
