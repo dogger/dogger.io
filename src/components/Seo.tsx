@@ -30,8 +30,8 @@ export default (props: { title?: string, description?: string, image?: string, a
             <meta name="robots" content="all" />
             <meta name="description" content={seo.description} />
             <meta name="image" content={seo.image} />
-            {seo.url && <meta property="og:url" content={seo.url} />}
-            {props.article && <meta property="og:type" content="article" />}
+            {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
+            {<meta property="og:type" content={props.article ? "article" : "website"} />}
             {seo.title && <meta property="og:title" content={seo.title} />}
             {seo.description && <meta property="og:description" content={seo.description} />}
             {seo.image && <meta property="og:image" content={seo.image} />}
