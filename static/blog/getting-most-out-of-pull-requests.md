@@ -42,7 +42,7 @@ If **4GB** of RAM is not enough or you'd like to have many concurrent test envir
 
 ##### The good
 - Alive and updated regularly, as seen on its <a rel="nofollow" target="_blank" href="https://github.com/dogger/app.dogger.io/pulse/monthly">GitHub Insights</a> page.
-- Fully managed. No setup required except installing a GitHub app, which takes **37** seconds.
+- Fully managed. No setup required except installing a GitHub app, which takes **37** seconds (we timed it!).
 - Docker-based. If your application runs in Docker, it runs with Pull Dog as well. You can point it to a custom `docker-compose.yml` file if you wish.
 - Integrates well with any build system (or no build system at all for that matter). Is your build server already building your Docker images? No problem.
 - Fully transparent. From a <a rel="nofollow" target="_blank" href="https://github.com/orgs/dogger/projects/1">public roadmap</a> to an <a rel="nofollow" target="_blank" href="https://github.com/dogger">open-source codebase</a>.
