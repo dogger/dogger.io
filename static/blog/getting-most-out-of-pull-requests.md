@@ -110,6 +110,8 @@ This gets more important if you're maintaining an open-source project (although 
 _It is important to note that once a secret has leaked, it is already too late. However, it matters how quick you discover it before someone else does, so you can generate new secrets to use instead._
 
 ### GitHub secrets
+<img src="/images/blog/pull-requests-post/GitHub_Logo.png" alt="GitHub logo" />
+
 If you put your secrets inside GitHub's secret manager itself, it will try to mask them as well as possible from build logs and other places where it might leak. 
 
 However, it is a naive form of prevention which should not be used as the only form of prevention. For instance, GitHub will still happily log your secret if it contains linebreaks, just to name an example.
