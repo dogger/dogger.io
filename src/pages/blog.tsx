@@ -7,7 +7,7 @@ import Seo from '../components/Seo';
 
 import classes from './blog.module.css';
 
-import { Link, Typography } from '@material-ui/core';
+import { Link, Typography, Box } from '@material-ui/core';
 
 export type BlogPost = {
     title: string;
@@ -19,7 +19,9 @@ export type BlogPost = {
 }
 
 export const renderBlogPost = (post: BlogPost) => {
-    return <>
+    return <Box style={{
+        marginBottom: 48
+    }}>
         <Typography variant="h1" component={post.contents ? "h1" : "h2"}>
             <Link
                 component={RouterLink}
@@ -48,7 +50,7 @@ export const renderBlogPost = (post: BlogPost) => {
             >
                 Read more
             </Link>}
-    </>;
+    </Box>;
 }
 
 export const BlogPage = (props: PropsWithChildren<RouteComponentProps>) => {
@@ -81,7 +83,9 @@ export default (props: any) => {
     posts.sort((a, b) => b.time.unix() - a.time.unix());
 
     return <BlogPage {...props}>
-        <h1>Blog</h1>
+        <Typography variant="h1" component="h1">
+            Blog
+        </Typography>
         {posts.map(renderBlogPost)}
     </BlogPage>;
 };

@@ -78,7 +78,11 @@ TODO
 <hr/>
 
 ## Set up Pull Request reminders
-If you're working in a larger team, there may constantly be a lot of pull requests open, pending review. Everyone might be busy working on their own features, and perhaps you've tried requesting a review from someone, and them forgetting it. You don't want to personally remind them all the time since that might seem annoying, but you also really would like your pull request merged.
+If you're working in a larger team, there may constantly be a lot of pull requests open, pending review. 
+
+Everyone might be busy working on their own features, and perhaps you've tried requesting a review from someone, and them forgetting it. 
+
+You don't want to personally remind them all the time since that might seem annoying, but you also really would like your pull request merged.
 
 ### GitHub Organization reminders
 <img src="/images/blog/pull-requests-post/GitHub_Logo.png" alt="GitHub logo" />
@@ -111,7 +115,7 @@ If you put your secrets inside GitHub's secret manager itself, it will try to ma
 However, it is a naive form of prevention which should not be used as the only form of prevention. For instance, GitHub will still happily log your secret if it contains linebreaks, just to name an example.
 
 ### GitGuardian
-<img src="/images/blog/pull-requests-post/gitguardian.svg" alt="GitGuardian logo" style="min-width: 100%" />
+<img src="/images/blog/pull-requests-post/gitguardian.svg" alt="GitGuardian logo" style="width: 100%; margin: 0;" />
 
 GitGuardian takes a different approach to secret prevention. Instead of trying to proactively prevent __known__ secrets from leaking, it will reactively scan for __potential__ secrets that have already leaked, and inform you as early as possible.
 
