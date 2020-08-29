@@ -65,7 +65,7 @@ export const PullDogPricingPlan = (props: {
     const settings = {
         install: {
             icon: <GitHub />,
-            text: 'Install'
+            text: 'Sign up'
         },
         upgrade: {
             icon: <TrendingUp />,
@@ -81,97 +81,96 @@ export const PullDogPricingPlan = (props: {
     const [pullDogSettings, pullDogSettingsController] = useGlobalResource(pullDogSettingsAccessor);
     const [paymentMethod] = usePaymentMethod();
 
-    return <>
-        <Card style={{
-            opacity: props.plan.isUnavailable ?
-                0.4 :
-                1.0
-        }}>
-            <CardContent>
-                <Typography variant="body1" component="h5" style={{
-                    fontSize: '30px',
-                    fontWeight: 100,
-                    opacity: 0.5,
-                    textTransform: 'uppercase'
-                }}>
-                    {props.plan.title}
-                </Typography>
-                <Typography variant="body1" component="h5" style={{
-                    fontSize: '40px'
-                }}>
-                    {isFreePlan ?
-                        <>Free!</> :
-                        <>
-                            <span style={{ fontWeight: 100, paddingRight: 4 }}>$</span>{props.plan.price / 100}<span style={{ opacity: 0.25, fontSize: '0.5em' }}>/mo</span>
-                        </>}
-                </Typography>
-                <PullDogPricingPlanAttribute
-                    title="Repository count"
-                    emphasize
-                    value="Unlimited" />
-                <PullDogPricingPlanAttribute
-                    title="Test environment pool *"
-                    emphasize
-                    value={isFreePlan ?
-                        "Shared globally **" :
-                        `${props.plan.poolSize} environment${props.plan.poolSize !== 1 ? "s" : ""}`} />
-                <PullDogPricingPlanAttribute
-                    title="Environment lifespan"
-                    value={isFreePlan ?
-                        "Minimum 55 minutes" :
-                        "Indefinite"} />
-                <PullDogPricingPlanAttribute
-                    title="RAM"
-                    value={`${props.plan.ramSizeInMegabytes / 1024} GB`} />
-                <PullDogPricingPlanAttribute
-                    title="CPUs"
-                    value={props.plan.cpuCount} />
-                
-                <Button 
-                    disabled={
-                        props.plan.isCurrent || 
-                        props.plan.isUnavailable || 
-                        alwaysDisabled
-                    } 
-                    onClick={async () => {
-                        setAlwaysDisabled(true);
-                        
-                        if(pullDogSettings?.isInstalled) {
-                            if(!paymentMethod) {
-                                alert("You first need to add a payment method under 'Account'.");
-                                return;
-                            }
-
-                            await apiClient.apiPullDogChangePlanPost({
-                                planId: props.plan.doggerPlanId,
-                                poolSize: props.plan.poolSize
-                            });
-
-                            alert("Your plan has been changed!");
-
-                            await pullDogSettingsController.refresh();
-                        } else if(typeof window !== "undefined") {
-                            window.location.href = 'https://github.com/apps/pull-dog/installations/new';
+    return <Card key={props.plan.doggerPlanId + "_" + props.plan.price} style={{
+        opacity: props.plan.isUnavailable ?
+            0.4 :
+            1.0
+    }}>
+        <CardContent>
+            <Typography variant="body1" component="h5" style={{
+                fontSize: '30px',
+                fontWeight: 100,
+                opacity: 0.5,
+                textTransform: 'uppercase'
+            }}>
+                {props.plan.title}
+            </Typography>
+            <Typography variant="body1" component="h5" style={{
+                fontSize: '40px'
+            }}>
+                {isFreePlan ?
+                    <>Free!</> :
+                    <>
+                        <span style={{ fontWeight: 100, paddingRight: 4 }}>$</span>{props.plan.price / 100}<span style={{ opacity: 0.25, fontSize: '0.5em' }}>/mo</span>
+                    </>}
+            </Typography>
+            <PullDogPricingPlanAttribute
+                title="Test environment pool *"
+                value={isFreePlan ?
+                    "Shared globally **" :
+                    `${props.plan.poolSize} environment${props.plan.poolSize !== 1 ? "s" : ""}`} />
+                    <PullDogPricingPlanAttribute
+                        title="Repository count"
+                        value="Unlimited" />
+            <PullDogPricingPlanAttribute
+                title="Environment lifespan"
+                value={isFreePlan ?
+                    "Minimum 55 minutes" :
+                    "Indefinite"} />
+            <PullDogPricingPlanAttribute
+                title="Repository count"
+                value="Unlimited" />
+            <PullDogPricingPlanAttribute
+                title="RAM"
+                value={`${props.plan.ramSizeInMegabytes / 1024} GB`} />
+            <PullDogPricingPlanAttribute
+                title="CPUs"
+                value={props.plan.cpuCount} />
+            
+            <Button 
+                disabled={
+                    props.plan.isCurrent || 
+                    props.plan.isUnavailable || 
+                    alwaysDisabled
+                } 
+                onClick={async () => {
+                    setAlwaysDisabled(true);
+                    
+                    if(pullDogSettings?.isInstalled) {
+                        if(!paymentMethod) {
+                            alert("You first need to add a payment method under 'Account'.");
+                            return;
                         }
-                        
-                        setAlwaysDisabled(false);
-                    }}
-                    variant="contained" 
-                    style={{ marginTop: 16 }} 
-                    startIcon={!props.plan.isCurrent && settings[props.plan.upgradeType].icon} 
-                    color="primary"
-                >
-                    {props.plan.isCurrent ? 
-                        <span>
-                            Current plan
-                        </span> : 
-                        <span>
-                            {settings[props.plan.upgradeType].text}
-                        </span>}
-                </Button>
-            </CardContent>
-        </Card>
-    </>;
+
+                        await apiClient.apiPullDogChangePlanPost({
+                            planId: props.plan.doggerPlanId,
+                            poolSize: props.plan.poolSize
+                        });
+
+                        alert("Your plan has been changed!");
+
+                        await pullDogSettingsController.refresh();
+                    } else if(typeof window !== "undefined") {
+                        window.location.href = 'https://github.com/apps/pull-dog/installations/new';
+                    }
+                    
+                    setAlwaysDisabled(false);
+                }}
+                variant="contained" 
+                style={{ marginTop: 16 }} 
+                startIcon={!props.plan.isCurrent && settings[props.plan.upgradeType].icon} 
+                color="primary"
+            >
+                {props.plan.isCurrent ? 
+                    <span>
+                        Current plan
+                    </span> : 
+                    <span>
+                        {settings[props.plan.upgradeType].text}
+                    </span>}
+            </Button>
+        </CardContent>
+    </Card>;
 }
 
 export const PullDogPricingTable = () => {
