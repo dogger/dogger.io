@@ -2,6 +2,7 @@ async function createBlogPosts({ actions, graphql, reporter }) {
   const { createPage } = actions;
   const templates = {
     blog: require.resolve(`./src/templates/BlogPostTemplate.tsx`),
+    page: require.resolve(`./src/templates/BlogPostTemplate.tsx`),
     documentation: require.resolve(`./src/templates/documentation/DocumentationPageTemplate.tsx`)
   };
   const result = await graphql(`
@@ -32,7 +33,7 @@ async function createBlogPosts({ actions, graphql, reporter }) {
       return;
 
     const split = slug.split("/");
-    const type = split.length > 2 ? split[1] : "blog";
+    const type = split.length > 2 ? split[1] : "page";
 
     if(!templates[type]) {
       reporter.panicOnBuild("Could not find a template for type " + type + ".");
