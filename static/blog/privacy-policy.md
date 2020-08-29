@@ -1,6 +1,6 @@
 ---
 slug: /privacy
-date: "2020-08-259
+date: "2020-08-29"
 title: "Privacy Policy"
 summary: "We've gathered Dogger's privacy policy here. It is part of what you agree to when you sign up for Dogger."
 noIndex: true
