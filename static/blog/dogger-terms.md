@@ -18,9 +18,7 @@ The user has the opportunity to print these terms and conditions (the text of th
 
 The user does not have a claim to the conclusion of a contract. dogger.io reserves the right to refuse the offer of a user to enter into a contract with them, without giving reasons.
 
-dogger.io users must be at least 16 years old to register a dogger.io website. dogger.io shall not knowingly collect information of minors or other persons who by law are not permitted to utilise our service and websites. If we become aware that we have collected personal data of minors, we shall delete this immediately; unless we are legally obligated to retain the data.
-
-If the dogger.io user operates an online store the minimum age is 18 years.
+dogger.io users must be at least 18 years old in order to sign up. dogger.io shall not knowingly collect information of minors or other persons who by law are not permitted to utilise our service and websites. If we become aware that we have collected personal data of minors, we shall delete this immediately; unless we are legally obligated to retain the data.
 
 ## Our Services
 dogger.io provides online services which allow dogger.io users to create and manage their own user profile (dogger.io user accounts) for and in order to create, manage and modify their their own dogger.io App(s) (hereinafter referred to as “dogger.io-Apps”). The dogger.io services enable the user to upload and publish their own contents and/or operate an online store.
@@ -32,9 +30,6 @@ All services provided by the Service Provider free of charge may be discontinued
 The app created by the dogger.io user shall be published under a subdomain name that shall either be chosen by the dogger.io user or generated automatically.
 
 We shall have the right to employ the services of third parties in accordance with the respective legal provisions applicable to dogger.io for service provision and in accordance with the commissioned data processing contract.
-
-In order to expand its service package, dogger.io may offer third-party services that can be integrated into the websites of dogger.io users. Type and scope of utilisation shall also be based on the respective general terms and conditions and the privacy statement of the third-party service provider to which we make separate reference. These third-party services shall be utilised at the risk of the user; dogger.io shall not be liable for any damages incurred through using services of third-party providers.
-Before third-party services are integrated/linked, you should always check the privacy statement and terms and conditions of the relevant third-party service provider, as the integration may allow the third-party provider access to your personal data.
 
 dogger.io reserves the right to complement, extend, change, suspend, discontinue or improve the services offered, in particular where such measures will improve the technological standard of the services or are deemed necessary for preventing abuse. Such modifications may lead to changes in the appearance of the dogger.io Pages. dogger.io shall only make such modifications that it deems reasonably acceptable for the dogger.io User or if their implementation is required by law or technological advancement.
 
