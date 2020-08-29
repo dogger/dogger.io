@@ -23,13 +23,7 @@ dogger.io users must be at least 18 years old in order to sign up. dogger.io sha
 ## Our Services
 dogger.io provides online services which allow dogger.io users to create and manage their own user profile (dogger.io user accounts) for and in order to create, manage and modify their their own dogger.io App(s) (hereinafter referred to as “dogger.io-Apps”). The dogger.io services enable the user to upload and publish their own contents and/or operate an online store.
 
-dogger.io offers various versions of their service. All current specifications for these versions can be found under /en/pricing/
-
 All services provided by the Service Provider free of charge may be discontinued at any time. In such a case the User will not be entitled to claim the continuation of this type of service.
-
-The app created by the dogger.io user shall be published under a subdomain name that shall either be chosen by the dogger.io user or generated automatically.
-
-We shall have the right to employ the services of third parties in accordance with the respective legal provisions applicable to dogger.io for service provision and in accordance with the commissioned data processing contract.
 
 dogger.io reserves the right to complement, extend, change, suspend, discontinue or improve the services offered, in particular where such measures will improve the technological standard of the services or are deemed necessary for preventing abuse. Such modifications may lead to changes in the appearance of the dogger.io Pages. dogger.io shall only make such modifications that it deems reasonably acceptable for the dogger.io User or if their implementation is required by law or technological advancement.
 
@@ -45,12 +39,12 @@ dogger.io users shall agree to receive electronic communication from dogger.io f
 ## Blocking Access to your Account
 dogger.io reserves the right to block access to our services either temporarily or permanently if there are concrete indications that the dogger.io user has violated or shall violate these terms and conditions and/or the law, or if dogger.io has a legitimate interest in blocking access.
 
-Furthermore a blocking of the dogger.io access can occur if the user is more than 7 days in default on their payment. In that case dogger.io is also entitled to apply for the deletion of the user’s’ domain name(s) at the respective registrar.
+Furthermore a blocking of the dogger.io access can occur if the user is more than 7 days in default on their payment.
 
 In deciding as to whether access shall be blocked, the legitimate interests of all parties shall be considered as appropriate.
 
 ## Service Disruption
-dogger.io endeavors to ensure the best possible availability of the dogger.io services. The dogger.io user acknowledges however, that for technical reasons as well as due to the Service Provider’s dependence on external factors, (e.g. unavailability of telecommunications networks, electricity outages, hardware and/or software failure etc), the uninterrupted availability of individual dogger.io sites cannot be guaranteed.The dogger.io user can therefore not assert a claim for continual access to the dogger.io sites. Access restrictions of a temporary nature shall not constitute grounds for warranty claims nor a right to extraordinary termination. The current status of our systems can be be viewed under the following link: https://status.dogger.io/
+dogger.io endeavors to ensure the best possible availability of the dogger.io services. The dogger.io user acknowledges however, that for technical reasons as well as due to the Service Provider’s dependence on external factors, (e.g. unavailability of telecommunications networks, electricity outages, hardware and/or software failure etc), the uninterrupted availability of individual dogger.io servers cannot be guaranteed.The dogger.io user can therefore not assert a claim for continual access to the dogger.io servers. Access restrictions of a temporary nature shall not constitute grounds for warranty claims nor a right to extraordinary termination.
 
 As regards the fee based services provided by dogger.io, dogger.io guarantees within the sphere of our responsibility an availability of 98% throughout the year. Regular maintenance, which can amount to up to 4 hours per week is not included in the aforementioned, calculated availability. We aim to keep the maintenance times as short as possible.
 
