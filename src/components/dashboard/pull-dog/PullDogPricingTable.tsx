@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { useTheme, Typography, Card, CardContent, Button, Grid, Slider, IconButton, makeStyles, Theme, CircularProgress } from '@material-ui/core';
 import { GitHub, Add, Remove, TrendingUp, TrendingDown } from '@material-ui/icons';
 import { getPlansByPrice, getCheapestPlan, getMostExpensivePlan, plansAccessor, demoPlanAccessor } from '../../../hooks/plans';
@@ -92,10 +92,12 @@ export const PullDogPricingPlan = (props: {
     const theme = useTheme();
     const styles = useStyles(theme);
 
-    const isButtonDisabled = 
-        props.plan.isCurrent || 
-        props.plan.isUnavailable || 
-        alwaysDisabled;
+    const isButtonDisabled = useMemo(
+        () => 
+            props.plan.isCurrent || 
+            props.plan.isUnavailable || 
+            alwaysDisabled,
+        [alwaysDisabled, props.plan]);
 
     const onSelectPlan = async () => {
         if(isButtonDisabled)
@@ -132,8 +134,8 @@ export const PullDogPricingPlan = (props: {
         key={props.plan.doggerPlanId + "_" + props.plan.price} 
         style={{
             opacity: props.plan.isUnavailable && 0.4,
-            borderColor: props.plan.isUnavailable && 'transparent',
-            cursor: !props.plan.isUnavailable && 'pointer'
+            borderColor: isButtonDisabled && 'transparent',
+            cursor: !isButtonDisabled && 'pointer'
         }}
     >
         <CardContent>
@@ -272,7 +274,7 @@ export const PullDogPricingTable = () => {
             doggerPlanId: doggerPlan.id,
             isCurrent: currentActivePullDogPlan ?
                 currentActivePullDogPlan.id === pullDogPlan.id :
-                pullDogPlan.poolSize === 0,
+                (settings?.isInstalled && pullDogPlan.poolSize === 0),
             isUnavailable: doggerPlan.ramSizeInMegabytes < ram,
             upgradeType: settings?.isInstalled ?
                 (!currentActivePullDogPlan || pullDogPlan.priceInHundreds > currentActivePullDogPlan.priceInHundreds ?
