@@ -16,7 +16,8 @@ export default function Template({
     time: moment(frontmatter.date),
     title: frontmatter.title,
     summary: frontmatter.summary,
-    slug: frontmatter.slug
+    slug: frontmatter.slug,
+    noIndex: frontmatter.noIndex
   };
 
   return <BlogPage>
