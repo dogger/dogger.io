@@ -20,7 +20,7 @@ export type BlogPost = {
 
 export const renderBlogPost = (post: BlogPost) => {
     return <>
-        <Typography component={post.contents ? "h1" : "h2"}>
+        <Typography variant="h1" component={post.contents ? "h1" : "h2"}>
             <Link
                 component={RouterLink}
                 to={post.slug} 
