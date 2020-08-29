@@ -1,9 +1,7 @@
 ---
 slug: "/documentation"
-title: Documentation
+title: Pull Dog documentation
 ---
-
-# Pull Dog
 
 ## Quickstart
 Getting started with Pull Dog only takes a minute, and requires two steps.

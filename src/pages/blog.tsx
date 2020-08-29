@@ -33,7 +33,7 @@ export const renderBlogPost = (post: BlogPost) => {
                 {post.title}
             </Link>
         </Typography>
-        <span style={{opacity: 0.6}}>Written <time>{post.time.format('LL')}</time></span>
+        {post.time.isValid() && <span style={{opacity: 0.6}}>Written <time>{post.time.format('LL')}</time></span>}
         {post.summary && <p>{post.summary}</p>}
         {post.contents && <>
             <Seo noIndex={post.noIndex} title={post.title} description={post.summary} />
