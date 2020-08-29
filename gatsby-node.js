@@ -31,7 +31,8 @@ async function createBlogPosts({ actions, graphql, reporter }) {
     if(!slug)
       return;
 
-    const type = slug.split("/")[1];
+    const split = slug.split("/");
+    const type = split.length > 2 ? split[1] : "blog";
 
     if(!templates[type]) {
       reporter.panicOnBuild("Could not find a template for type " + type + ".");
