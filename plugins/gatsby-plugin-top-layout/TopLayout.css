@@ -9,6 +9,21 @@ body {
   cursor: default;
 }
 
+a, 
+a:hover {
+  color: inherit;
+}
+
+li a,
+p a {
+  opacity: 0.75;
+}
+
+li a:hover,
+p a:hover {
+  opacity: 1;
+}
+
 html,body,#root,#___gatsby,#gatsby-focus-wrapper {
   height: 100%;
   display: flex;
