@@ -7,7 +7,7 @@ import Seo from '../components/Seo';
 
 import classes from './blog.module.css';
 
-import { Link } from '@material-ui/core';
+import { Link, Typography } from '@material-ui/core';
 
 export type BlogPost = {
     title: string;
@@ -20,8 +20,7 @@ export type BlogPost = {
 
 export const renderBlogPost = (post: BlogPost) => {
     return <>
-        <Seo noIndex={post.noIndex} />
-        <h2>
+        <Typography component={post.contents ? "h1" : "h2"}>
             <Link
                 component={RouterLink}
                 to={post.slug} 
@@ -31,10 +30,13 @@ export const renderBlogPost = (post: BlogPost) => {
             >
                 {post.title}
             </Link>
-        </h2>
+        </Typography>
         <span style={{opacity: 0.6}}>Written <time>{post.time.format('LL')}</time></span>
         {post.summary && <p>{post.summary}</p>}
-        {post.contents && <div dangerouslySetInnerHTML={{ __html: post.contents }} />}
+        {post.contents && <>
+            <Seo noIndex={post.noIndex} title={post.title} description={post.summary} />
+            <div dangerouslySetInnerHTML={{ __html: post.contents }} />
+        </>}
         {!post.contents && 
             <Link
                 component={RouterLink}
@@ -50,14 +52,15 @@ export const renderBlogPost = (post: BlogPost) => {
 }
 
 export const BlogPage = (props: PropsWithChildren<RouteComponentProps>) => {
-    return <div className={classes.blog}>
-        <h1>Blog</h1>
+    return <>
         <Seo
             title="Blog"
             description="The Dogger blog contains all kinds of tips and tricks for Docker developers." 
         />
-        {props.children}
-    </div>
+        <div className={classes.blog}>
+            {props.children}
+        </div>
+    </>;
 }
 
 export default (props: any) => {
@@ -78,6 +81,7 @@ export default (props: any) => {
     posts.sort((a, b) => b.time.unix() - a.time.unix());
 
     return <BlogPage {...props}>
+        <h1>Blog</h1>
         {posts.map(renderBlogPost)}
     </BlogPage>;
 };

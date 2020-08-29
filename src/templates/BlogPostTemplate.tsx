@@ -21,7 +21,6 @@ export default function Template({
 
   return <BlogPage>
     <>
-    <Seo title={post.title} description={post.summary} />
     <article>
         {renderBlogPost(post)}
     </article>

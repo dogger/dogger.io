@@ -1,7 +1,7 @@
 ---
 slug: /terms
-date: "2020-08-25"
-title: "Terms of use"
+date: "2020-08-29"
+title: "Terms of Use"
 summary: "We've gathered Dogger's terms of use here. They are what you agree to when you sign up for Dogger."
 noIndex: true
 ---

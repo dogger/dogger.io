@@ -22,7 +22,7 @@ This is where Pull Dog comes in to play.
 
 Pull Dog is a GitHub app that will automatically provision a Docker-based test server for your feature as you open a pull request. And best of all - *it's all free!*
 
-### Setting it up
+## Setting it up
 You start out by <a href="https://github.com/apps/pull-dog" target="_blank" rel="nofollow noopener noreferrer">installing the app</a> to your GitHub account.
 
 Once installed, you simply push a commit to the master branch of the repository you want to enable, with a pull-dog.json file in the root directory that contains the following.
@@ -37,7 +37,7 @@ Once installed, you simply push a commit to the master branch of the repository 
 
 After pushing, Pull Dog is enabled for the given repository and will run for any future pull requests that are opened.
 
-### Trying it out
+## Trying it out
 For my example, I made an empty repository with the following `pull-dog.json` configuration file:
 
 ```json
@@ -82,7 +82,7 @@ volumes:
     db_data: {}
 ```
 
-#### Opening a pull request
+### Opening a pull request
 Upon opening my pull request, I am greeted with the following comment from pull-dog where I can see that it is provisioning a server for me.
 
 <img src="/images/pull-dog/screenshot-1.jpg" alt="Pull Dog is provisioning a server here after opening the pull request" />
@@ -91,7 +91,7 @@ After a brief while, the comment is updated with the connection details of my se
 
 <img src="/images/pull-dog/screenshot-2.jpg" alt="The server is ready" />
 
-#### Closing the pull request
+### Closing the pull request
 After closing the pull request, the server is shut down again, and the comment is updated to reflect that.
 
 <img src="/images/pull-dog/screenshot-3.jpg" alt="Pull Request is closed and server is destroyed" />

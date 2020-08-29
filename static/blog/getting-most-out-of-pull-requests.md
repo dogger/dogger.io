@@ -5,7 +5,7 @@ title: "Getting the most out of your Pull Requests: The complete list for 2020"
 summary: "If you're a developer, there's a good chance you're familiar with Pull Requests. They are a great way to contribute code to a project, or manage the development of independent features for a team. However, there is so much more you can do with them. We've listed the top tips here."
 ---
 
-### Use an on-demand temporary preview environment
+## Use an on-demand temporary preview environment
 You might already be deploying your application through GitHub Actions or some other CI/CD pipeline. That's great! It's probably also running your tests and making sure your code compiles.
 
 However, did you know that there are services that can also (in addition to your CI/CD pipeline) provision a _temporary_ test environment for _every pull request you open_, which _only lives as long as the pull request is open_?
@@ -27,7 +27,7 @@ Now, here's how that flow typically looks with an on-demand temporary preview en
 
 Let's take a look at the different options out there.
 
-#### Pull Dog (that's us!)
+### Pull Dog (that's us!)
 <img src="/images/pull-dog/promo.png" alt="Pull Dog combines Docker and GitHub to give you on-demand test environments for your pull requests" />
 
 - **More info:** [dogger.io](/#pull-dog)
@@ -35,19 +35,19 @@ Let's take a look at the different options out there.
 - **Demo:** <a rel="nofollow" target="_blank" href="https://github.com/portainer/portainer/pulls?q=is%3Aopen+is%3Apr">Portainer's open Pull Requests on GitHub</a>
 - **Prerequisites:** Your app must be able to run in Docker.
 
-##### Pricing
+#### Pricing
 Pull Dog has a **free-forever tier available** for smaller projects. 
 
 If **4GB** of RAM is not enough or you'd like to have many concurrent test environments running, there's a priced plan available starting at **$14/month** for **unlimited repositories**.
 
-##### The good
+#### The good
 - Alive and updated regularly, as seen on its <a rel="nofollow" target="_blank" href="https://github.com/dogger/app.dogger.io/pulse/monthly">GitHub Insights</a> page.
 - Fully managed. No setup required except installing a GitHub app, which takes **37** seconds (we timed it!).
 - Docker-based. If your application runs in Docker, it runs with Pull Dog as well. You can point it to a custom `docker-compose.yml` file if you wish.
 - Integrates well with any build system (or no build system at all for that matter). Is your build server already building your Docker images? No problem.
 - Fully transparent. From a <a rel="nofollow" target="_blank" href="https://github.com/orgs/dogger/projects/1">public roadmap</a> to an <a rel="nofollow" target="_blank" href="https://github.com/dogger">open-source codebase</a>.
 
-##### The bad
+#### The bad
 - Only currently supports applications specified using a Docker Compose YML file (<a rel="nofollow" target="_blank" href="https://github.com/dogger/app.dogger.io/issues/630">#630</a>).
 - Does not currently support a custom bring-your-own-server kind of infrastructure, and currently hosts everything on AWS Lightsail (<a rel="nofollow" target="_blank" href="https://github.com/dogger/app.dogger.io/issues/543">#543</a>).
 - More? <a rel="nofollow" target="_blank" href="https://github.com/dogger/app.dogger.io/issues/new">Leave feedback</a>.
@@ -73,34 +73,34 @@ TODO
 - Cheap, free-forever plan
 - Easy setup -->
 
-### Set up Pull Request reminders
+## Set up Pull Request reminders
 If you're working in a larger team, there may constantly be a lot of pull requests open, pending review. Everyone might be busy working on their own features, and perhaps you've tried requesting a review from someone, and them forgetting it. You don't want to personally remind them all the time since that might seem annoying, but you also really would like your pull request merged.
 
-#### GitHub Organization reminders
+### GitHub Organization reminders
 - **More info:** <a rel="nofollow" target="_blank" href="https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/managing-scheduled-reminders-for-your-team">docs.github.com</a>
 - **Open source:** No
 - **Prerequisites:** Requires a team or organization on GitHub
 
 GitHub acquired Pull Panda (which happened to build Pull Reminders) to bring this directly into GitHub itself. You can specify specific criteria that should be met for a notification to arrive (for instance, labels, specific text in the title of the pull request, pull request age, etc), and it doesn't tend to get spammy because it likes to summarize all reminders into one post, based on an interval.
 
-#### Eleminder
+### Eleminder
 - **More info:** <a rel="nofollow" target="_blank" href="https://www.eleminder.com/">eleminder.com</a>
 - **Open source:** No
 - **Prerequisites**: GitHub or GitLab, and Slack.
 
 While the GitHub Organization reminders give notifications for your whole team in a sumamry, Eleminder is tailored around individual reminders to individual people. That way, it is more direct. This however also means that there is more to set up.
 
-### Prevent (or become aware of) leaked secrets
+## Prevent (or become aware of) leaked secrets
 This gets more important if you're maintaining an open-source project (although it generally applies to closed source as well). Once a secret leaks into your source code, it can get extremely difficult to remove again. Although GIT history can be altered and deleted, orphaned branches and old build logs might still contain the source code or leaked secret.
 
 _It is important to note that once a secret has leaked, it is already too late. However, it matters how quick you discover it before someone else does, so you can generate new secrets to use instead._
 
-#### GitHub secrets
+### GitHub secrets
 If you put your secrets inside GitHub's secret manager itself, it will try to mask them as well as possible from build logs and other places where it might leak. 
 
 However, it is a naive form of prevention which should not be used as the only form of prevention. For instance, GitHub will still happily log your secret if it contains linebreaks, just to name an example.
 
-#### GitGuardian
+### GitGuardian
 GitGuardian takes a different approach to secret prevention. Instead of trying to proactively prevent __known__ secrets from leaking, it will reactively scan for __potential__ secrets that have already leaked, and inform you as early as possible.
 
 It does this by looking for patterns that are commonly used. For instance, Slack Webhook callback URLs, Amazon AWS Access Keys, etc. This can be more effective than scanning for a list of known secrets, because it will catch potential mistakes one of your developers might make.
