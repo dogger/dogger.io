@@ -1,9 +1,7 @@
 import React from "react"
 import { graphql } from "gatsby"
 import {renderBlogPost, BlogPost, BlogPage} from '../pages/blog';
-import { Helmet } from "react-helmet";
 import moment from "moment";
-import Seo from "../components/Seo";
 
 export default function Template({
   data
