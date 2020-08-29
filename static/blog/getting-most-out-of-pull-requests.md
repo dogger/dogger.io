@@ -77,11 +77,15 @@ TODO
 If you're working in a larger team, there may constantly be a lot of pull requests open, pending review. Everyone might be busy working on their own features, and perhaps you've tried requesting a review from someone, and them forgetting it. You don't want to personally remind them all the time since that might seem annoying, but you also really would like your pull request merged.
 
 ### GitHub Organization reminders
+<img src="/images/blog/pull-requests-post/GitHub_Logo.png" alt="GitHub logo" />
+
 - **More info:** <a rel="nofollow" target="_blank" href="https://docs.github.com/en/github/setting-up-and-managing-organizations-and-teams/managing-scheduled-reminders-for-your-team">docs.github.com</a>
 - **Open source:** No
 - **Prerequisites:** Requires a team or organization on GitHub
 
-GitHub acquired Pull Panda (which happened to build Pull Reminders) to bring this directly into GitHub itself. You can specify specific criteria that should be met for a notification to arrive (for instance, labels, specific text in the title of the pull request, pull request age, etc), and it doesn't tend to get spammy because it likes to summarize all reminders into one post, based on an interval.
+GitHub acquired Pull Panda (which happened to build Pull Reminders) to bring this directly into GitHub itself. 
+
+You can specify specific criteria that should be met for a notification to arrive (for instance, labels, specific text in the title of the pull request, pull request age, etc), and it doesn't tend to get spammy because it likes to summarize all reminders into one post, based on an interval.
 
 ### Eleminder
 - **More info:** <a rel="nofollow" target="_blank" href="https://www.eleminder.com/">eleminder.com</a>
@@ -101,6 +105,8 @@ If you put your secrets inside GitHub's secret manager itself, it will try to ma
 However, it is a naive form of prevention which should not be used as the only form of prevention. For instance, GitHub will still happily log your secret if it contains linebreaks, just to name an example.
 
 ### GitGuardian
+<img src="/images/blog/pull-requests-post/gitguardian.svg" alt="GitGuardian logo" />
+
 GitGuardian takes a different approach to secret prevention. Instead of trying to proactively prevent __known__ secrets from leaking, it will reactively scan for __potential__ secrets that have already leaked, and inform you as early as possible.
 
 It does this by looking for patterns that are commonly used. For instance, Slack Webhook callback URLs, Amazon AWS Access Keys, etc. This can be more effective than scanning for a list of known secrets, because it will catch potential mistakes one of your developers might make.
