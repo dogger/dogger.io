@@ -92,9 +92,16 @@ export const PullDogPricingPlan = (props: {
     const theme = useTheme();
     const styles = useStyles(theme);
 
+    const isButtonDisabled = 
+        props.plan.isCurrent || 
+        props.plan.isUnavailable || 
+        alwaysDisabled;
+
     const onSelectPlan = async () => {
-        if(props.plan.isUnavailable)
+        if(isButtonDisabled)
             return;
+
+        if(props.plan)
 
         setAlwaysDisabled(true);
         
@@ -171,11 +178,7 @@ export const PullDogPricingPlan = (props: {
                 value={props.plan.cpuCount} />
             
             <Button 
-                disabled={
-                    props.plan.isCurrent || 
-                    props.plan.isUnavailable || 
-                    alwaysDisabled
-                } 
+                disabled={isButtonDisabled} 
                 onClick={onSelectPlan}
                 variant="contained" 
                 style={{ marginTop: 16 }} 
