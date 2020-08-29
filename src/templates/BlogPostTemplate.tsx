@@ -36,6 +36,7 @@ export const pageQuery = graphql`
         slug
         title
         summary
+        noIndex
       }
     }
   }
