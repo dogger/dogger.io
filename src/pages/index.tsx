@@ -3,7 +3,6 @@ import { graphql } from "gatsby";
 import { useTheme, Typography, Container, Link, Divider, Grid, useMediaQuery, makeStyles, Theme } from '@material-ui/core';
 import { GitHub, Storage, ArrowDownward, AssignmentTurnedIn, MoneyOff, Share, ListAlt, Timer } from '@material-ui/icons';
 import { PullDogPricingTable } from '../components/dashboard/pull-dog/PullDogPricingTable';
-import { Helmet } from 'react-helmet';
 import { ProductCard } from '../components/index/ProductCard';
 import { Timeline } from '../components/index/Timeline';
 import { Testimonial } from '../components/index/Testimonial';
