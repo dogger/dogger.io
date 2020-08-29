@@ -1,7 +1,6 @@
 import React, { PropsWithChildren } from 'react';
 import { graphql, Link as RouterLink } from 'gatsby'
 import moment, { Moment } from 'moment';
-import {Helmet} from "react-helmet";
 import { RouteComponentProps } from "@reach/router";
 
 import Seo from '../components/Seo';
@@ -16,10 +15,12 @@ export type BlogPost = {
     summary: string;
     slug: string;
     time: Moment;
+    noIndex: boolean;
 }
 
 export const renderBlogPost = (post: BlogPost) => {
     return <>
+        <Seo noIndex={post.noIndex} />
         <h2>
             <Link
                 component={RouterLink}
@@ -71,7 +72,8 @@ export default (props: any) => {
             slug: x.frontmatter.slug,
             summary: x.frontmatter.summary,
             time: moment(x.frontmatter.date),
-            title: x.frontmatter.title
+            title: x.frontmatter.title,
+            noIndex: x.frontmatter.noIndex
         }) as BlogPost) as Array<BlogPost>;
     posts.sort((a, b) => b.time.unix() - a.time.unix());
 
@@ -89,7 +91,8 @@ query AllBlogPostsQuery {
                     date
                     slug
                     summary
-                    title
+                    title,
+                    noIndex
                 }
             }
         }

@@ -2,7 +2,7 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useLocation } from "@reach/router"
 import { useStaticQuery, graphql } from "gatsby"
-export default (props: { title?: string, description?: string, image?: string, article?: boolean }) => {
+export default (props: { title?: string, description?: string, image?: string, article?: boolean, noIndex?: boolean }) => {
     const { pathname } = useLocation()
     const { site } = useStaticQuery(query)
     const {
@@ -27,7 +27,7 @@ export default (props: { title?: string, description?: string, image?: string, a
     return (
         <Helmet title={seo.title} titleTemplate={titleTemplate}>
             <link rel="canonical" href={canonicalUrl} />
-            <meta name="robots" content="all" />
+            <meta name="robots" content={props.noIndex ? "noindex" : "all"} />
             <meta name="description" content={seo.description} />
             <meta name="image" content={seo.image} />
             {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
