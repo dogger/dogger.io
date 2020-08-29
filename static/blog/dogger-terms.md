@@ -53,46 +53,40 @@ For the use of the fee-based Packages as well as optional extra services/ servic
 
 All payment methods possible shall be displayed to the user in the product information and/or during the checkout and ordering process.
 
-Invoices for users of the dogger.io fee-based packages and services shall be provided to the user electronically, by e-mail, via Stripe.
+Invoices for users of the dogger.io fee-based packages and services shall be provided to the user electronically, by e-mail.
 
-The respective invoiced amount is due in full to dogger.io 14 days after the invoice has been deemed to have been received, unless otherwise agreed in text form.
+The respective invoiced amount is due in full to dogger.io 7 days after the invoice has been deemed to have been received, unless otherwise agreed in text form.
 
 The relevant day to determine the timeliness of payment is the day at which the amount is received by, or credited and completely available to dogger.io.
 
 dogger.io processes all payments via external payment processors, including (but not limited to) Stripe. The dogger.io user agrees that dogger.io payments shall only be accepted via these payment processors and that they correspondingly permit the processor concerned to charge the amount concerned.
 
-If the dogger.io contract includes a payment method for the automatic deduction of contract extension costs, dogger.io shall automatically deduct the invoice sum due on the day of contract extension subject to the corresponding consent of the dogger.io user. By selecting the payment method the dogger.io user consents to automatic deduction.
-
-Where payment is made via bank transfer the specific purpose “reason for payment” supplied by dogger.io must be entered on the bank transfer. If the dogger.io user sends a bank transfer with another purpose or the wrong purpose then they are obligated to inform dogger.io immediately and send dogger.io evidence of proof of payment. This proof of payment must include the following details: The bank number concerned (IBAN of the sender), the name of the account holder, the payment date (Timezone), the amount, the purpose/reason for payment as entered on transfer form) as well as the bank number(recipient’s IBAN). The burden of proof as concerns payment lies solely with the dogger.io user.
-
 dogger.io, the provider is also entitled to deactivate/block the user’s server(s) and prevent their access where the charges due are not paid.
 
 dogger.io does not accept any liability for losses, damages or loss of revenue that may be caused by the blocking of a dogger.io Site due to incomplete or delayed payment, as long as the failure or delay can be attributed to the dogger.io user.
 
-Payments are due in the respective national currency i.e. EURO or USD.
+Payments are due in USD currency.
 
-Discounts and other actions can only be applied to the first term of a contract, unless otherwise stipulated. The current, applicable price shall apply to all contract renewals. We may change our offer and prices from time to time. In the event of such a change all existing, fee based contract holders shall be provided with a 6 week notice period and the changes shall take effect from the beginning of the next contractual period. If the dogger.io user does not object to these changes within 6 weeks of the receipt of this change-notification and continues to use the dogger.io services subsequent to the expiration of the deadline, the changes announced in the notification shall be deemed to be effectively agreed to. In the notification message we shall inform the user as to their right of objection, as well as the consequences of such an objection.
-
-All prices exclude VAT. The applicable VAT rate shall be shown on the invoice. If the dogger.io user i.e. the corresponding company is not based in Germany, but rather in the EU, the dogger.io user shall receive an invoice in which the VAT is not shown. In that case the dogger.io user shall enter a (valid) VAT identification number with their dogger.io fee-based package order. In that case the dogger.io user is responsible for the taxation (reverse charge procedure). dogger.io user outside of Europe as well as in Switzerland receive a net amount invoice.
+All prices exclude VAT. The applicable VAT rate shall be shown on the invoice. If the dogger.io user i.e. the corresponding company is not based in Denmark, but rather in the EU, the dogger.io user shall receive an invoice in which the VAT is not shown. In that case the dogger.io user shall enter a (valid) VAT identification number with their dogger.io fee-based package order. In that case the dogger.io user is responsible for the taxation (reverse charge procedure). dogger.io users outside of Europe as well as in Switzerland receive a net amount invoice.
 
 ## Chargebacks
 Should a payment be back-posted by the dogger.io user, we shall reserve the right to block the corresponding dogger.io app(s) and/or the relevant dogger.io account and to terminate the associated contract(s).
 
 Resumed use of the dogger.io app and/or the dogger.io account shall only be possible once all outstanding sums have been settled.
 
-Charges that dogger.io incurs via a chargeback from a dogger.io user, denial of payment or via the opening of a dispute claim, may be invoiced to the user. Should the dogger.io user have questions regarding a payment they may contact the customer support teams in advance.
+Charges that dogger.io incurs via a chargeback from a dogger.io user, denial of payment or via the opening of a dispute claim, may be invoiced to the user. Should the dogger.io user have questions regarding a payment they may contact dogger.io in advance.
 
 Should problems occur that prevent the collection/charging of the invoiced amount, dogger.io reserves the right to only offer certain payment methods for the payment of the invoice.
 
 ## Right of Revocation
-Consumers are generally entitled to a right of revocation. Further information can be found in our Cancellation Policy.
+Consumers are generally entitled to a right of revocation. Further information can be found in our Cancellation Policy below.
 
 In the event of a revocation of the contract by the dogger.io user, payments received from the user shall be returned without delay and at the latest within 14 days from the receipt of the revocation. We will return your payment using the same payment method that you originally used to pay for your dogger.io package.
 
 ## Responsibility for Content
 The dogger.io user is completely responsible for all content they post. dogger.io is not obliged to inspect the content prior to publication as regards completeness, validity, legality, currentness, quality and suitability for particular purposes.
 
-The dogger.io user declares and guarantees dogger.io that they are the sole owner of all rights to the content posted by them on their dogger.io website, or that they are otherwise legitimately authorised to do so (e.g. via written consent from the copyright holder).
+The dogger.io user declares and guarantees dogger.io that they are the sole owner of all rights to the content posted by them on their dogger.io server, or that they are otherwise legitimately authorised to do so (e.g. via written consent from the copyright holder).
 
 dogger.io reserves the right to refuse, block or remove the posting of content and/or content that has already been posted (including private messages) without prior notice, should the posting of the content or the posted content itself constitute or lead to a violation of these terms and conditions, or where there is clear evidence that a serious violation of these terms shall result. The legitimate interests of the dogger.io user shall be taken into account and proportional measures to prevent and/or remove the violation shall be taken.
 
