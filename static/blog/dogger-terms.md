@@ -93,7 +93,7 @@ dogger.io reserves the right to refuse, block or remove the posting of content a
 The dogger.io user shall upon first request indemnify dogger.io and hold dogger.io harmless against all claims from third parties, against dogger.io as a result of a violation committed by the dogger.io user against legal regulations, third party rights(in particular personal rights, copyright and/or trademark rights), or as regards contractual duties, representations or guarantees(warranties), including the costs of a legal defense (lawyer’s fees and court costs at the applicable statutory rate). In the event of claims arising from any such behavior, the dogger.io user is obligated to immediately and completely cooperate and clarify the situation, as well as to make all required entries accessible to dogger.io in a suitable manner.
 
 ## Contracts and Cancellations
-A free dogger.io app can be deleted by the user at any time using the settings and/or the menu on the respective dogger.io website. A dogger.io account can be deleted by the dogger.io user via the dashboard settings.
+A free dogger.io app can be deleted by the user at any time by utilizing the Command Line Interface (CLI) or by contacting us. A dogger.io account can be deleted by the dogger.io user by contacting us.
 
 Unless stipulated otherwise in the respective service description, the contract for the chargeable packages shall be extended by the same originally agreed period if the contract is not terminated one month prior to the end of the respective term.
 
@@ -107,7 +107,7 @@ dogger.io may terminate the contracts with the dogger.io user unilaterally and w
 
 Either party’s mutual right to extraordinary termination for serious reasons remains unaffected.
 
-In particular we shall have the right to terminate the contractual relationship with no notice period if circumstances allow the assumption that the dogger.io user has intentionally or negligently committed “illicit activities” pursuant to point 6 and 13 of these terms or has breached other obligations of these terms. Such a breach and/or non-compliance can also result in further civil and criminal consequences for the dogger.io user. Instalments paid in advance shall not be reimbursed in this case. The dogger.io user shall be entitled to demonstrate that non-reimbursement is “unreasonable” in its case.
+In particular we shall have the right to terminate the contractual relationship with no notice period if circumstances allow the assumption that the dogger.io user has intentionally or negligently committed “illicit activities” or has breached other obligations of these terms. Such a breach and/or non-compliance can also result in further civil and criminal consequences for the dogger.io user. Instalments paid in advance shall not be reimbursed in this case. The dogger.io user shall be entitled to demonstrate that non-reimbursement is “unreasonable” in its case.
 
 After termination of the contraction relationship we are no longer obligated to provide the contracted services. We can delete all data of the dogger.io user that are located on our services. Transferring the user’s complete dogger.io App to the servicer of a third party is not possible. It is therefore the responsibility of the dogger.io user to store and backup the data in a timely fashion.
 
@@ -119,11 +119,11 @@ See more in our [privacy policy](/privacy).
 ## Cancellation Policy
 Not happy with your dogger.io subscription? We are sorry to see you go. You can cancel your service contract and receive a full refund within 14 days of your initial purchase. You do not need to provide a reason, though we always appreciate hearing what we could have done better.
 
-Please contact our Customer Support Team to cancel your contract. Cancellation requests must be received in writing, to support@dogger.io
+Please contact our us to cancel your contract. Cancellation requests must be received in writing, to mathias.lorenzen at live dot com.
 
 Your cancellation request must be received in writing within 14-days of the initial purchase in order for you to receive your refund. After the 14-day window, you may cancel your contract at any time, but no refund will be provided.
 
 ### Effects of cancellation
-If you cancel your contract within the 14-day window, we will process your refund within two weeks of receiving your request. We will return your payment using the same payment method that you originally used.
+If you cancel your contract within the 14-day window, we will process your refund within a month of receiving your request. We will return your payment using the same payment method that you originally used.
 
 Once the cancellation is completed, dogger.io will delete all data associated with the user, including their dogger.io projects.
