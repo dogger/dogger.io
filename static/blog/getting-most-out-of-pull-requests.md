@@ -111,7 +111,7 @@ If you put your secrets inside GitHub's secret manager itself, it will try to ma
 However, it is a naive form of prevention which should not be used as the only form of prevention. For instance, GitHub will still happily log your secret if it contains linebreaks, just to name an example.
 
 ### GitGuardian
-<img src="/images/blog/pull-requests-post/gitguardian.svg" alt="GitGuardian logo" />
+<img src="/images/blog/pull-requests-post/gitguardian.svg" alt="GitGuardian logo" style="min-width: 100%" />
 
 GitGuardian takes a different approach to secret prevention. Instead of trying to proactively prevent __known__ secrets from leaking, it will reactively scan for __potential__ secrets that have already leaked, and inform you as early as possible.
 
