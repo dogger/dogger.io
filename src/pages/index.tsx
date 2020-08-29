@@ -32,6 +32,7 @@ const App = ({ data }) => {
     const isDownFromMedium = useMediaQuery(theme.breakpoints.down('sm'));
 
     return <>
+        <Seo />
         <LandingPageSection style={{
             paddingTop: '6rem',
             paddingBottom: '20rem',
