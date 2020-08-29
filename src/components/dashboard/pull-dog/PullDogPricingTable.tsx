@@ -11,9 +11,17 @@ import { useGlobalResource } from '@fluffy-spoon/react-globalize';
 const useStyles = makeStyles({
     header: () => ({}),
     accentColor: (existingTheme: Theme) => ({
-        color: existingTheme.palette.type === "dark" ? 
+        color: existingTheme.palette?.type === "dark" ? 
             'white' : 
-            existingTheme.palette.primary.main
+            existingTheme.palette?.primary.main
+    }),
+    planCard: (existingTheme: Theme) => ({
+        border: '1px solid transparent',
+        opacity: 0.9,
+        '&:hover': {
+            border: '1px solid ' + existingTheme.palette?.primary.main,
+            opacity: 1.0
+        }
     })
 });
 
@@ -81,11 +89,46 @@ export const PullDogPricingPlan = (props: {
     const [pullDogSettings, pullDogSettingsController] = useGlobalResource(pullDogSettingsAccessor);
     const [paymentMethod] = usePaymentMethod();
 
-    return <Card key={props.plan.doggerPlanId + "_" + props.plan.price} style={{
-        opacity: props.plan.isUnavailable ?
-            0.4 :
-            1.0
-    }}>
+    const theme = useTheme();
+    const styles = useStyles(theme);
+
+    const onSelectPlan = async () => {
+        if(props.plan.isUnavailable)
+            return;
+
+        setAlwaysDisabled(true);
+        
+        if(pullDogSettings?.isInstalled) {
+            if(!paymentMethod) {
+                alert("You first need to add a payment method under 'Account'.");
+                return;
+            }
+
+            await apiClient.apiPullDogChangePlanPost({
+                planId: props.plan.doggerPlanId,
+                poolSize: props.plan.poolSize
+            });
+
+            alert("Your plan has been changed!");
+
+            await pullDogSettingsController.refresh();
+        } else if(typeof window !== "undefined") {
+            window.location.href = 'https://github.com/apps/pull-dog/installations/new';
+        }
+        
+        setAlwaysDisabled(false);
+    };
+
+    return <Card 
+        onClick={onSelectPlan}
+        className={styles.planCard}
+        key={props.plan.doggerPlanId + "_" + props.plan.price} 
+        style={{
+            opacity: props.plan.isUnavailable && 0.4,
+            borderColor: props.plan.isUnavailable && 'transparent',
+            cursor: !props.plan.isUnavailable && 'pointer'
+        }}
+    >
         <CardContent>
             <Typography variant="body1" component="h5" style={{
                 fontSize: '30px',
@@ -133,29 +176,7 @@ export const PullDogPricingPlan = (props: {
                     props.plan.isUnavailable || 
                     alwaysDisabled
                 } 
-                onClick={async () => {
-                    setAlwaysDisabled(true);
-                    
-                    if(pullDogSettings?.isInstalled) {
-                        if(!paymentMethod) {
-                            alert("You first need to add a payment method under 'Account'.");
-                            return;
-                        }
-
-                        await apiClient.apiPullDogChangePlanPost({
-                            planId: props.plan.doggerPlanId,
-                            poolSize: props.plan.poolSize
-                        });
-
-                        alert("Your plan has been changed!");
-
-                        await pullDogSettingsController.refresh();
-                    } else if(typeof window !== "undefined") {
-                        window.location.href = 'https://github.com/apps/pull-dog/installations/new';
-                    }
-                    
-                    setAlwaysDisabled(false);
-                }}
+                onClick={onSelectPlan}
                 variant="contained" 
                 style={{ marginTop: 16 }} 
                 startIcon={!props.plan.isCurrent && settings[props.plan.upgradeType].icon} 
