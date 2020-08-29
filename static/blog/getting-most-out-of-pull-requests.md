@@ -5,6 +5,8 @@ title: "Getting the most out of your Pull Requests: The complete list for 2020"
 summary: "If you're a developer, there's a good chance you're familiar with Pull Requests. They are a great way to contribute code to a project, or manage the development of independent features for a team. However, there is so much more you can do with them. We've listed the top tips here."
 ---
 
+<hr/>
+
 ## Use an on-demand temporary preview environment
 You might already be deploying your application through GitHub Actions or some other CI/CD pipeline. That's great! It's probably also running your tests and making sure your code compiles.
 
@@ -73,6 +75,8 @@ TODO
 - Cheap, free-forever plan
 - Easy setup -->
 
+<hr/>
+
 ## Set up Pull Request reminders
 If you're working in a larger team, there may constantly be a lot of pull requests open, pending review. Everyone might be busy working on their own features, and perhaps you've tried requesting a review from someone, and them forgetting it. You don't want to personally remind them all the time since that might seem annoying, but you also really would like your pull request merged.
 
@@ -93,6 +97,8 @@ You can specify specific criteria that should be met for a notification to arriv
 - **Prerequisites**: GitHub or GitLab, and Slack.
 
 While the GitHub Organization reminders give notifications for your whole team in a sumamry, Eleminder is tailored around individual reminders to individual people. That way, it is more direct. This however also means that there is more to set up.
+
+<hr/>
 
 ## Prevent (or become aware of) leaked secrets
 This gets more important if you're maintaining an open-source project (although it generally applies to closed source as well). Once a secret leaks into your source code, it can get extremely difficult to remove again. Although GIT history can be altered and deleted, orphaned branches and old build logs might still contain the source code or leaked secret.
