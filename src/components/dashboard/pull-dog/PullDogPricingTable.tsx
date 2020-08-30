@@ -7,6 +7,7 @@ import { pullDogSettingsAccessor } from '../../../hooks/pull-dog';
 import { usePaymentMethod } from '../../../hooks/payment';
 import { apiClient } from '../../../api/Client';
 import { useGlobalResource } from '@fluffy-spoon/react-globalize';
+import { navigate } from "@reach/router";
 
 const useStyles = makeStyles({
     header: () => ({}),
@@ -99,35 +100,51 @@ export const PullDogPricingPlan = (props: {
             alwaysDisabled,
         [alwaysDisabled, props.plan]);
 
+    let isChangingPlan = false;
+
     const onSelectPlan = async () => {
-        if(isButtonDisabled || alwaysDisabled)
+        if(isButtonDisabled || isChangingPlan)
             return;
 
+        isChangingPlan = true;
         setAlwaysDisabled(true);
         
-        if(pullDogSettings?.isInstalled) {
-            if(!paymentMethod) {
-                alert("You first need to add a payment method under 'Account'.");
-                return;
+        try {
+            if(pullDogSettings?.isInstalled) {
+                if(!paymentMethod) {
+                    alert("You first need to add a payment method.");
+                    navigate("/dashboard");
+                    return;
+                }
+
+                await apiClient.apiPullDogChangePlanPost({
+                    planId: props.plan.doggerPlanId,
+                    poolSize: props.plan.poolSize
+                });
+
+                alert("Your plan has been changed!");
+
+                await pullDogSettingsController.refresh();
+            } else if(typeof window !== "undefined") {
+                window.location.href = 'https://github.com/apps/pull-dog/installations/new';
             }
-
-            await apiClient.apiPullDogChangePlanPost({
-                planId: props.plan.doggerPlanId,
-                poolSize: props.plan.poolSize
-            });
-
-            alert("Your plan has been changed!");
-
-            await pullDogSettingsController.refresh();
-        } else if(typeof window !== "undefined") {
-            window.location.href = 'https://github.com/apps/pull-dog/installations/new';
+        } catch(ex) {
+            throw ex;
+        } finally {
+            isChangingPlan = false;
+            setAlwaysDisabled(false);
         }
-        
-        setAlwaysDisabled(false);
     };
 
     return <Card 
-        onClick={onSelectPlan}
+        onClick={e => {
+            onSelectPlan();
+
+            e.preventDefault();
+            e.stopPropagation();
+
+            return false;
+        }}
         className={styles.planCard}
         key={props.plan.doggerPlanId + "_" + props.plan.price} 
         style={{
