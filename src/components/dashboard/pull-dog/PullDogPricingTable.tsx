@@ -100,10 +100,8 @@ export const PullDogPricingPlan = (props: {
         [alwaysDisabled, props.plan]);
 
     const onSelectPlan = async () => {
-        if(isButtonDisabled)
+        if(isButtonDisabled || alwaysDisabled)
             return;
-
-        if(props.plan)
 
         setAlwaysDisabled(true);
         
