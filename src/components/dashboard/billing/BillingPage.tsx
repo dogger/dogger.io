@@ -5,7 +5,7 @@ import React from 'react';
 import { RouteComponentProps } from '@reach/router';
 import { Divider } from '@material-ui/core';
 
-export const AccountPage = (props: RouteComponentProps) => {
+export const BillingPage = (props: RouteComponentProps) => {
     return <>
         <PaymentInformationSection />
         <Divider style={{
