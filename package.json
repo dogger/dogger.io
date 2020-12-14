@@ -47,7 +47,7 @@
     "react-helmet": "^6.0.0",
     "react-lazylog": "^4.5.2",
     "react-monaco-editor": "^0.36.0",
-    "react-scripts": "^3.4.1",
+    "react-scripts": "^3.4.3",
     "typescript": "^3.8.3",
     "webfontloader": "^1.6.28",
     "yaml": "1.9.2"
